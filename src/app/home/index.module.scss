@@ -1,0 +1,17 @@
+.page {
+    .main {
+        display: grid;
+        place-items: center;
+        min-height: 100dvh;
+
+        svg {
+            width: 15rem;
+            max-width: 60%;
+
+            path,
+            rect {
+                fill: $white!important;
+            }
+        }
+    }
+}

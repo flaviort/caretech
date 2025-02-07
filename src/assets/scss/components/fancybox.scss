@@ -1,0 +1,29 @@
+@use '../variables' as *;
+
+body {
+	.fullscreen-fancybox {
+		.fancybox__viewport {
+			.fancybox__track {
+				.fancybox__slide {
+					padding: 0;
+
+					&:before {
+						content: none;
+					}
+
+					.fancybox__content {
+						width: 100%!important;
+						height: 100%!important;
+
+						.f-button {
+							position: absolute;
+							top: 1rem;
+							right: 1rem;
+
+						}
+					}
+				}
+			}
+		}
+	}
+}

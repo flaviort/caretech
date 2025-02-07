@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Menda';
+    src: url('/fonts/Menda-Medium.woff2') format('woff2'),
+         url('/fonts/Menda-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Menda';
+    src: url('/fonts/Menda-SemiBold.woff2') format('woff2'),
+         url('/fonts/Menda-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Menda';
+    src: url('/fonts/Menda-Bold.woff2') format('woff2'),
+         url('/fonts/Menda-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}

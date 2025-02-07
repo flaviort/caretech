@@ -1,0 +1,25 @@
+@use '../variables' as *;
+
+body {
+	.fancybox-modal {
+		.fancybox__carousel {
+			.fancybox__viewport {
+				.fancybox__track {
+					.fancybox__slide {
+						padding-top: 4px;
+
+						&:before {
+							//content: none;
+						}
+
+						#contact-modal {
+							> .is-close-btn {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
