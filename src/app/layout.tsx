@@ -28,22 +28,22 @@ export const metadata: Metadata = {
 	alternates: {
         canonical: './',
     },
-	title: 'CareTech It',
+	title: 'CareTech IT',
 	description: 'A CareTech IT é especializada em soluções tecnológicas e de TI para o setor de saúde, oferecendo sistemas e suporte para hospitais.',
 	icons: {
 		icon: '/favicon/icon.svg'
 	},
 	openGraph: {
-		title: 'CareTech It',
+		title: 'CareTech IT',
 		description: 'A CareTech IT é especializada em soluções tecnológicas e de TI para o setor de saúde, oferecendo sistemas e suporte para hospitais.',
 		url: 'https://caretechit.com.br',
-		siteName: 'CareTech It',
+		siteName: 'CareTech IT',
 		images: [
 			{
 				url: 'https://caretechit.com.br/img/og-image.png',
 				width: 1280,
 				height: 628,
-				alt: 'CareTech It'
+				alt: 'CareTech IT'
 			}
 		],
 		locale: 'pt_BR',
