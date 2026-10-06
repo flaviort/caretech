@@ -45,14 +45,15 @@ export function Intro() {
 						<div>
 						<dl className='grid grid-cols-3 gap-x-4'>
 							{facts.map(({ icon: Icon, value, label }) => (
-								<div key={label} className='flex flex-col gap-4 border-t border-line py-5 md:py-6' data-reveal>
-									<Icon className='mt-1 size-5 shrink-0 text-ink md:size-6' strokeWidth={1.25} aria-hidden='true' />
-									<div className='min-w-0'>
-										<dd className='tnum text-[clamp(1.5rem,2.6vw,2.5rem)] font-semibold leading-none tracking-[-0.04em]'>
+								// dt must precede dd inside a dl group; order-last puts the label back under the value
+								<div key={label} className='flex min-w-0 flex-col border-t border-line py-5 md:py-6' data-reveal>
+									<dt className='label order-last mt-2 text-muted'>{label}</dt>
+									<dd className='flex flex-col gap-4'>
+										<Icon className='mt-1 size-5 shrink-0 text-ink md:size-6' strokeWidth={1.25} aria-hidden='true' />
+										<span className='tnum text-[clamp(1.5rem,2.6vw,2.5rem)] font-semibold leading-none tracking-[-0.04em]'>
 											{value}
-										</dd>
-										<dt className='label mt-2 text-muted'>{label}</dt>
-									</div>
+										</span>
+									</dd>
 								</div>
 							))}
 						</dl>

@@ -35,9 +35,16 @@ export function brasiliaParts(date: Date) {
 
 export function LiveClock({ seconds = false, className }: { seconds?: boolean; className?: string }) {
 	const now = useBrasiliaTime()
+	// before mount there is no time to mark up, and "--:--" is not valid <time> content
+	if (!now)
+		return (
+			<span className={className} aria-hidden='true'>
+				{seconds ? '--:--:--' : '--:--'}
+			</span>
+		)
 	return (
-		<time className={className} dateTime={now?.toISOString()} suppressHydrationWarning>
-			{now ? format(seconds).format(now) : seconds ? '--:--:--' : '--:--'}
+		<time className={className} dateTime={now.toISOString()}>
+			{format(seconds).format(now)}
 		</time>
 	)
 }

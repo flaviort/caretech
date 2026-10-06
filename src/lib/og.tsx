@@ -14,7 +14,10 @@ type OgInput = {
 	photo: string
 }
 
-const read = (...parts: string[]) => readFile(join(process.cwd(), ...parts))
+// Each read is scoped to its own folder so the build only traces those folders, not the whole project.
+const font = (file: string) => readFile(join(process.cwd(), 'src/assets/fonts', file))
+const publicFile = (path: string) => readFile(join(process.cwd(), 'public', path))
+const logo = () => readFile(join(process.cwd(), 'src/assets/svg/logo/icon.svg'))
 
 // The fonts in src/assets/fonts are Latin subsets with layout features (kerning) stripped:
 // Satori measures words without kerning but draws them with it, which left gaps after long words.
@@ -23,10 +26,10 @@ const read = (...parts: string[]) => readFile(join(process.cwd(), ...parts))
 // mono label and the logo mark. Rendered at build time for every route.
 export async function renderOg({ label, title, photo }: OgInput) {
 	const [semibold, mono, image, icon] = await Promise.all([
-		read('src/assets/fonts/Geist-SemiBold.ttf'),
-		read('src/assets/fonts/GeistMono-Regular.ttf'),
-		read('public', photo),
-		read('src/assets/svg/logo/icon.svg')
+		font('Geist-SemiBold.ttf'),
+		font('GeistMono-Regular.ttf'),
+		publicFile(photo),
+		logo()
 	])
 	const mark = `data:image/svg+xml;base64,${icon.toString('base64')}`
 	const src = `data:image/jpeg;base64,${image.toString('base64')}`

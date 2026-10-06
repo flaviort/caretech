@@ -25,7 +25,7 @@ Project docs live in `_docs/`. Keep only `README.md` and this file at the root; 
 
 ## Stack
 
-- Next.js 15 App Router, React 18, TypeScript.
+- Next.js 16 App Router (Turbopack for dev and build), React 19, TypeScript 7.
 - Tailwind CSS v4 via `@tailwindcss/postcss`. Tokens are in `src/app/globals.css`, not a Tailwind config file.
 - Lenis smooth scroll, GSAP (+ `@gsap/react`) and the View Transitions API for page transitions. Three.js for the logo mark on Home (`MarkThree.tsx`).
 - Geist and Geist Mono via `next/font/google`.
@@ -38,8 +38,10 @@ Project docs live in `_docs/`. Keep only `README.md` and this file at the root; 
 ```bash
 npm run dev
 npm run build
-npm run lint
+npm run typecheck
 ```
+
+No ESLint: `typescript-eslint` (and so `eslint-config-next`) doesn't support TypeScript 7 yet, and `eslint-config-next` pulled in an unfixed `braces` advisory. Re-add it once both are resolved. Keep `npm audit` at 0.
 
 The preview config in `.claude/launch.json` runs the dev server on port 3100 (`caretech-dev`).
 

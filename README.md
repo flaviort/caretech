@@ -1,6 +1,6 @@
 # CareTech IT
 
-Institutional site for CareTech (caretechit.com.br). Next.js 15 (App Router), Tailwind CSS v4, Lenis smooth scroll, GSAP, and the View Transitions API for page transitions.
+Institutional site for CareTech (caretechit.com.br). Next.js 16 (App Router), React 19, Tailwind CSS v4, Lenis smooth scroll, GSAP, and the View Transitions API for page transitions.
 
 ## Running
 

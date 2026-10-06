@@ -158,9 +158,6 @@ export const Curtain = forwardRef<CurtainHandle>(function Curtain(_, ref) {
 				</span>
 			</div>
 
-			<noscript>
-				<style>{`#curtain{display:none}`}</style>
-			</noscript>
 		</div>
 	)
 })

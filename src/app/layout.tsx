@@ -63,6 +63,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		<html lang='pt-BR' className={`${geist.variable} ${geistMono.variable}`}>
 			<head>
 				<meta name='apple-mobile-web-app-title' content={site.name} />
+				{/* without JS the tile curtain would never open; a <style> is only valid in <head> */}
+				<noscript dangerouslySetInnerHTML={{ __html: '<style>#curtain{display:none}</style>' }} />
 			</head>
 			<body>
 				<a
