@@ -7,7 +7,7 @@ import { images, routes, site } from '@/content/site'
 
 const facts = [
 	{ icon: CalendarCheck, value: String(site.founded), label: 'Ano de fundação' },
-	{ icon: History, value: `${site.founderYears}+`, label: 'Anos de experiência do fundador' },
+	{ icon: History, value: `${site.founderYears}+`, label: 'Anos de experiência' },
 	{ icon: LayoutGrid, value: '6', label: 'Frentes de serviço' }
 ]
 

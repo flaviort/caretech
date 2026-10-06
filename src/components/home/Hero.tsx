@@ -71,7 +71,7 @@ export function Hero() {
 				<div className='label mt-8 space-y-1 text-white/85 md:mt-10' data-intro-fade>
 					<p>Desde {site.founded}</p>
 					<p>+ {site.founderYears} anos em ambientes críticos</p>
-					<p className='flex items-center gap-2 pt-2'>
+					<p className='flex items-center gap-2'>
 						<span className='size-2 rounded-[2px] bg-blue-2' aria-hidden='true' />
 						Brasília <LiveClock className='tnum' />
 					</p>
