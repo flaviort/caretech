@@ -41,7 +41,7 @@ export const nav = [
 const photo = (slot: string, alt: string) => ({ src: `/img/photos/${slot}.jpg`, alt })
 
 // One graded series: Magnific generations (hero, hero cards) and licensed Shutterstock photos.
-// Slots and art direction live in docs/imagery-brief.md; each file embeds its own origin.
+// Slots and art direction live in _docs/imagery-brief.md; each file embeds its own origin.
 export const images = {
 	hero: photo('hero', 'Profissional caminhando por um corredor hospitalar à noite com um notebook'),
 	heroCardA: photo('hero-card-a', 'Mãos conectando um cabo de rede em um rack de comunicação'),
@@ -59,6 +59,8 @@ export const images = {
 	about: photo('about', 'Fachada de um edifício hospitalar com janelas em sequência')
 }
 
+export type Faq = { q: string; a: string }
+
 export type Service = {
 	slug: string
 	code: string
@@ -70,6 +72,9 @@ export type Service = {
 	items: string[]
 	image: { src: string; alt: string }
 	phrase: string
+	// two short paragraphs: the problem, then how CareTech works on it
+	approach: string[]
+	faq: Faq[]
 }
 
 export const services: Service[] = [
@@ -94,7 +99,25 @@ export const services: Service[] = [
 			'Processos'
 		],
 		image: images.ge,
-		phrase: 'Tecnologia sem estratégia gera custos. Tecnologia com inteligência gera resultados.'
+		phrase: 'Tecnologia sem estratégia gera custos. Tecnologia com inteligência gera resultados.',
+		approach: [
+			'Em muitas organizações, a TI cresce sem direção: contratos espalhados, fornecedores sem acompanhamento, equipe sobrecarregada e nenhum indicador que mostre se a tecnologia está ajudando o negócio. É o retrato da baixa maturidade tecnológica, um dos desafios mais recorrentes que encontramos.',
+			'A CareTech atua como parceira executiva: estrutura governança e processos, organiza contratos e fornecedores, define indicadores e conduz o planejamento estratégico ao lado da diretoria. É a mesma abordagem que aplicamos ao assumir a gestão integral da TI de uma instituição hospitalar de grande porte, onde disponibilidade e segurança da informação não admitem improviso.'
+		],
+		faq: [
+			{
+				q: 'A CareTech pode assumir a gestão completa da TI?',
+				a: 'Sim. A CareTech já assumiu a gestão integral da área de TI de uma instituição hospitalar de grande porte, estruturando processos, governança, indicadores e a evolução tecnológica da organização.'
+			},
+			{
+				q: 'O que é governança de TI?',
+				a: 'É o conjunto de processos, papéis e indicadores que garante que a tecnologia apoie os objetivos da organização: como as decisões de TI são tomadas, como os investimentos são priorizados e como os resultados são acompanhados.'
+			},
+			{
+				q: 'A gestão estratégica de TI serve para empresas fora da saúde?',
+				a: 'Sim. A experiência vem de ambientes hospitalares, mas planejamento, governança, contratos, fornecedores e indicadores são desafios de qualquer organização que depende de tecnologia.'
+			}
+		]
 	},
 	{
 		slug: 'operacoes-e-sustentacao-tecnologica',
@@ -107,7 +130,25 @@ export const services: Service[] = [
 		listLabel: 'Soluções',
 		items: ['Infraestrutura', 'Redes', 'Service Desk', 'Suporte Técnico', 'Outsourcing', 'Monitoramento'],
 		image: images.os,
-		phrase: 'Mais do que suporte. Inteligência para o seu negócio.'
+		phrase: 'Mais do que suporte. Inteligência para o seu negócio.',
+		approach: [
+			'Infraestrutura instável, rede que cai e chamados sem resposta param a operação. Em hospitais e em outros ambientes críticos, o custo de uma parada vai muito além do financeiro.',
+			'Cuidamos da base tecnológica da sua organização: infraestrutura, redes, service desk, suporte técnico e monitoramento, com a opção de outsourcing da operação. O objetivo é estabilidade, disponibilidade e continuidade operacional, acompanhadas por processos e indicadores que mostram como a operação está de fato.'
+		],
+		faq: [
+			{
+				q: 'O que está incluído em operações e sustentação?',
+				a: 'Infraestrutura, redes, service desk, suporte técnico, monitoramento e, quando faz sentido, o outsourcing da operação de TI.'
+			},
+			{
+				q: 'A CareTech faz outsourcing de TI?',
+				a: 'Sim. O outsourcing é uma das soluções desta frente, para organizações que preferem confiar a operação de TI a um parceiro especializado.'
+			},
+			{
+				q: 'Por que a experiência em hospitais faz diferença na sustentação?',
+				a: 'Porque em um hospital a TI não pode parar. Quem já sustentou esse tipo de ambiente trata disponibilidade e continuidade como requisito, não como meta.'
+			}
+		]
 	},
 	{
 		slug: 'projetos-e-especialistas-sob-demanda',
@@ -128,7 +169,25 @@ export const services: Service[] = [
 			'Analista de suporte'
 		],
 		image: images.pe,
-		phrase: 'Conectando tecnologia, pessoas e resultados.'
+		phrase: 'Conectando tecnologia, pessoas e resultados.',
+		approach: [
+			'A escassez de profissionais especializados é um dos desafios mais recorrentes em TI: projetos atrasam, a operação fica dependente de poucas pessoas e o conhecimento se perde quando alguém sai.',
+			'Alocamos especialistas em dados e analistas de BI, de sistemas, de negócio, de infraestrutura e de suporte, tanto para projetos estratégicos quanto para reforçar operações críticas, pelo tempo que for necessário. Os profissionais trabalham com a mesma visão de negócio que orienta todos os serviços da CareTech.'
+		],
+		faq: [
+			{
+				q: 'Quais perfis a CareTech disponibiliza?',
+				a: 'Especialistas em dados, analistas de BI, analistas de sistemas, analistas de negócio, analistas de infraestrutura e analistas de suporte.'
+			},
+			{
+				q: 'Os profissionais atuam em projetos ou na operação?',
+				a: 'Nos dois. A alocação atende projetos estratégicos e também operações críticas que precisam de reforço.'
+			},
+			{
+				q: 'Por quanto tempo um especialista fica alocado?',
+				a: 'Pelo tempo que o projeto ou a operação precisar.'
+			}
+		]
 	},
 	{
 		slug: 'inteligencia-de-dados-e-analytics',
@@ -150,7 +209,25 @@ export const services: Service[] = [
 			'Analytics'
 		],
 		image: images.id,
-		phrase: 'Transformamos dados em decisões e decisões em resultados.'
+		phrase: 'Transformamos dados em decisões e decisões em resultados.',
+		approach: [
+			'Quase toda organização tem dados, mas poucas conseguem usá-los para decidir. Relatórios que não batem, planilhas paralelas e indicadores em que ninguém confia levam a decisões por intuição.',
+			'Estruturamos Business Intelligence, dashboards executivos e indicadores estratégicos com ferramentas como Power BI e Weknow, e implantamos a gestão à vista para que a informação certa esteja na frente de quem decide. A experiência com preparação, saneamento e validação de dados garante que os números partam de uma base confiável.'
+		],
+		faq: [
+			{
+				q: 'Com quais ferramentas de BI a CareTech trabalha?',
+				a: 'Entre elas, Power BI e Weknow, aplicadas em dashboards executivos, indicadores estratégicos e gestão à vista.'
+			},
+			{
+				q: 'O que é gestão à vista?',
+				a: 'É a prática de deixar os indicadores mais importantes visíveis para quem opera e para quem decide, em painéis atualizados, para que os problemas apareçam cedo e a equipe acompanhe os resultados.'
+			},
+			{
+				q: 'E se os dados da empresa não forem confiáveis?',
+				a: 'Esse costuma ser o primeiro passo. A CareTech tem experiência em preparação, saneamento e validação de dados, como no apoio a uma migração de ERP, para que os indicadores partam de uma base confiável.'
+			}
+		]
 	},
 	{
 		slug: 'integracoes-e-automacoes',
@@ -169,7 +246,25 @@ export const services: Service[] = [
 			'Migração de dados'
 		],
 		image: images.in,
-		phrase: 'A evolução digital começa com decisões inteligentes.'
+		phrase: 'A evolução digital começa com decisões inteligentes.',
+		approach: [
+			'Quando os sistemas não conversam, a equipe vira a integração: digita a mesma informação duas vezes, exporta planilhas e corrige inconsistências à mão. O resultado é retrabalho, erro e risco operacional.',
+			'Integramos sistemas, automatizamos processos e fluxos operacionais e construímos rotinas de ETL e de migração de dados. Em um projeto de migração de ERP, atuamos na preparação, no saneamento e na validação dos dados, reduzindo inconsistências e o risco para a continuidade do negócio.'
+		],
+		faq: [
+			{
+				q: 'A CareTech faz migração de dados entre sistemas?',
+				a: 'Sim. Em um projeto de migração de ERP, atuamos na preparação, no saneamento e na validação dos dados, com redução de inconsistências e menor risco operacional.'
+			},
+			{
+				q: 'O que é ETL?',
+				a: 'ETL (extração, transformação e carga) é o processo de buscar dados em diferentes sistemas, tratá-los e carregá-los em um destino comum, como um data warehouse ou uma ferramenta de BI.'
+			},
+			{
+				q: 'Qual a diferença entre integração e automação?',
+				a: 'A integração faz os sistemas trocarem informações entre si; a automação executa tarefas e fluxos sem intervenção manual. Juntas, eliminam retrabalho e reduzem erros.'
+			}
+		]
 	},
 	{
 		slug: 'inteligencia-artificial',
@@ -188,11 +283,57 @@ export const services: Service[] = [
 			'Processamento inteligente de informações'
 		],
 		image: images.ia,
-		phrase: 'Seu parceiro estratégico em transformação digital.'
+		phrase: 'Seu parceiro estratégico em transformação digital.',
+		approach: [
+			'A inteligência artificial entrou na agenda das organizações, mas aplicada sem objetivo claro ela gera custo e risco, principalmente quando há dados sensíveis envolvidos.',
+			'Aplicamos IA onde ela gera produtividade: automação de processos, assistentes virtuais, análise de dados, IA generativa e processamento inteligente de informações. Cada iniciativa nasce com governança e segurança da informação, em linha com o compromisso da CareTech com a LGPD.'
+		],
+		faq: [
+			{
+				q: 'Em quais áreas a IA pode ser aplicada?',
+				a: 'Automação de processos, assistentes virtuais, análise de dados, IA generativa e processamento inteligente de informações, sempre onde houver ganho real de produtividade.'
+			},
+			{
+				q: 'Como fica a segurança dos dados em projetos de IA?',
+				a: 'Governança e segurança da informação entram desde o primeiro dia, em linha com a LGPD e com o compromisso da CareTech com a confidencialidade.'
+			},
+			{
+				q: 'O que é IA generativa?',
+				a: 'É a categoria de inteligência artificial que cria conteúdo novo, como textos, resumos e respostas, a partir de dados e instruções. Aplicada com critério, acelera tarefas como atendimento, análise de documentos e produção de relatórios.'
+			}
+		]
 	}
 ]
 
 export const getService = (slug: string) => services.find(s => s.slug === slug)
+
+// Shown on Contato. Every answer restates facts already on the site; anything else waits for the client.
+export const faq: Faq[] = [
+	{
+		q: 'A CareTech atende apenas instituições de saúde?',
+		a: 'Não. A CareTech nasceu na gestão de TI em ambientes de saúde, onde disponibilidade e segurança da informação são críticas, e leva essa experiência para organizações de qualquer setor que precisem de gestão de TI, dados ou transformação digital.'
+	},
+	{
+		q: 'Em quais regiões a CareTech atende?',
+		a: 'Em todo o Brasil. O atendimento é nacional.'
+	},
+	{
+		q: 'Quais serviços a CareTech oferece?',
+		a: 'Seis frentes: gestão estratégica de tecnologia, operações e sustentação, projetos e especialistas sob demanda, inteligência de dados e analytics, integrações e automações e inteligência artificial.'
+	},
+	{
+		q: 'Como começar um projeto com a CareTech?',
+		a: `Conte o desafio da sua operação pelo WhatsApp ${contact.whatsappDisplay}, pelo e-mail ${contact.email} ou pelo formulário desta página. A partir dessa conversa, entendemos o cenário e indicamos o melhor caminho.`
+	},
+	{
+		q: 'Qual é a experiência da CareTech?',
+		a: 'A empresa foi fundada em 2022 a partir de mais de 15 anos de experiência do seu fundador em ambientes corporativos complexos, especialmente na saúde. Entre os projetos está a gestão integral da TI de uma instituição hospitalar de grande porte.'
+	},
+	{
+		q: 'Como a CareTech trata dados pessoais e informações confidenciais?',
+		a: 'Com medidas técnicas, administrativas e organizacionais que garantem confidencialidade, integridade e disponibilidade, em conformidade com a LGPD. Pelo mesmo motivo, os nomes dos clientes dos nossos cases são preservados.'
+	}
+]
 
 export const challenges = [
 	{
@@ -269,6 +410,8 @@ export const cases = [
 		image: images.case2
 	}
 ]
+
+export const getCase = (slug: string) => cases.find(c => c.slug === slug)
 
 export const values = [
 	'Ética',

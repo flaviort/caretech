@@ -6,16 +6,21 @@ import { BoardList } from '@/components/ui/BoardList'
 import { Button } from '@/components/ui/Button'
 import { Line } from '@/components/ui/Line'
 import { challenges, images, routes, site, values } from '@/content/site'
+import { JsonLd } from '@/components/seo/JsonLd'
+import { breadcrumb, graph, pageMetadata, webPage } from '@/lib/seo'
 
-export const metadata: Metadata = {
-	title: 'Sobre',
-	description:
-		'Fundada em 2022, a CareTech nasceu de mais de 15 anos de experiência em ambientes corporativos complexos, especialmente na saúde.'
-}
+const title = 'Sobre a CareTech: TI com Visão de Negócio'
+const description =
+	'Fundada em 2022, a CareTech nasceu de mais de 15 anos de gestão de TI em ambientes críticos, especialmente na saúde. Conheça nossa história, missão, visão e valores.'
+
+export const metadata: Metadata = pageMetadata({ title, description, path: routes.about })
+
+const trail = [{ name: 'Sobre', path: routes.about }]
 
 export default function SobrePage() {
 	return (
 		<>
+			<JsonLd data={graph(webPage({ type: 'AboutPage', path: routes.about, name: title, description, trail }), breadcrumb(trail))} />
 			<PageHero
 				title={['Nossa', 'história']}
 				lead='A CareTech surgiu da necessidade identificada ao longo de anos de atuação profissional em Tecnologia da Informação.'
@@ -24,7 +29,7 @@ export default function SobrePage() {
 
 			<section className='bg-paper pb-28 pt-16 md:pb-40 md:pt-28'>
 				<div className='shell'>
-					<ScrubText
+					<ScrubText as='h2'
 						className='max-w-[30ch] lg:max-w-[34ch]'
 						before={<SectionTag index='S.01' label='Origem' className='statement-tag' />}
 						text={`Fundada em ${site.founded}, a CareTech nasceu da experiência de mais de ${site.founderYears} anos do seu fundador em ambientes corporativos complexos, especialmente na saúde, onde disponibilidade, segurança da informação e qualidade dos processos são críticas.`}
@@ -84,7 +89,7 @@ export default function SobrePage() {
 
 			<section className='bg-mist pb-28 pt-28 md:pb-40 md:pt-36'>
 				<div className='shell'>
-					<ScrubText
+					<ScrubText as='h2'
 						className='max-w-[30ch] lg:max-w-[34ch]'
 						before={<SectionTag index='S.02' label='Valores' className='statement-tag' />}
 						text='Transformamos tecnologia em vantagem competitiva.'
@@ -127,7 +132,7 @@ export default function SobrePage() {
 
 			<section className='bg-paper pb-28 pt-28 md:pb-40 md:pt-36'>
 				<div className='shell'>
-					<ScrubText
+					<ScrubText as='h2'
 						className='max-w-[30ch] lg:max-w-[34ch]'
 						before={<SectionTag index='S.03' label='Hoje' className='statement-tag' />}
 						text='Hoje, a CareTech abrange todo o território nacional, oferecendo soluções especializadas, consultoria estratégica, outsourcing, gestão de TI, Business Intelligence, automação e alocação de profissionais qualificados.'

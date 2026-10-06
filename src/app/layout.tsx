@@ -7,55 +7,53 @@ import { TransitionProvider } from '@/components/motion/Transition'
 import { PageAnimations } from '@/components/motion/PageAnimations'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { contact, site } from '@/content/site'
+import { site } from '@/content/site'
+import { JsonLd } from '@/components/seo/JsonLd'
+import { graph, organization, website } from '@/lib/seo'
 
 import './globals.css'
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-geist', display: 'swap' })
 const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono', display: 'swap' })
 
+const verification = process.env.GOOGLE_SITE_VERIFICATION
+
 export const metadata: Metadata = {
 	metadataBase: new URL(site.url),
 	title: {
-		default: `${site.name} | ${site.slogan.join(' ')}`,
-		template: `%s | ${site.name}`
+		default: `${site.legalName} | ${site.slogan.join(' ')}`,
+		template: `%s | ${site.legalName}`
 	},
 	description: site.description,
-	alternates: { canonical: './' },
-	icons: { icon: '/favicon/icon.svg', apple: '/favicon/apple-icon.png' },
+	applicationName: site.legalName,
+	authors: [{ name: site.legalName, url: site.url }],
+	creator: site.legalName,
+	publisher: site.legalName,
+	category: 'technology',
+	formatDetection: { telephone: false, email: false, address: false },
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 }
+	},
+	icons: {
+		icon: [
+			{ url: '/favicon/favicon.ico', sizes: '48x48' },
+			{ url: '/favicon/icon.svg', type: 'image/svg+xml' }
+		],
+		apple: '/favicon/apple-icon.png'
+	},
 	openGraph: {
-		title: `${site.name} | ${site.slogan.join(' ')}`,
-		description: site.description,
-		url: site.url,
 		siteName: site.legalName,
-		images: [{ url: '/img/og-image.png', width: 1280, height: 628, alt: site.legalName }],
 		locale: 'pt_BR',
 		type: 'website'
-	}
+	},
+	twitter: { card: 'summary_large_image' },
+	...(verification ? { verification: { google: verification } } : {})
 }
 
 export const viewport: Viewport = {
 	themeColor: '#151515'
-}
-
-const jsonLd = {
-	'@context': 'https://schema.org',
-	'@type': 'Organization',
-	name: site.legalName,
-	url: site.url,
-	logo: `${site.url}/favicon/web-app-manifest-512x512.png`,
-	slogan: site.slogan.join(' '),
-	description: site.description,
-	foundingDate: String(site.founded),
-	areaServed: 'BR',
-	contactPoint: {
-		'@type': 'ContactPoint',
-		contactType: 'customer support',
-		telephone: '+55-41-9822-2437',
-		email: contact.email,
-		areaServed: 'BR',
-		availableLanguage: 'Portuguese'
-	}
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -85,7 +83,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					</TransitionProvider>
 				</SmoothScroll>
 
-				<script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+				<JsonLd data={graph(organization, website)} />
 				{gaId && <GoogleAnalytics gaId={gaId} />}
 			</body>
 		</html>

@@ -95,10 +95,10 @@ export function Diagnostico() {
 
 	return (
 		<section ref={root} className='bg-paper'>
+			<h2 className='sr-only'>Desafios que resolvemos</h2>
+
 			{/* desktop: pinned dial */}
 			<div ref={stage} className='shell relative hidden h-[100svh] min-h-[680px] lg:block'>
-				<h2 className='sr-only'>Desafios que resolvemos</h2>
-
 				<div className='absolute inset-y-0 left-[clamp(1rem,2.25vw,2rem)] flex flex-col justify-center'>
 					<ol className='space-y-0.5'>
 						{challenges.map((item, i) => (
@@ -155,7 +155,6 @@ export function Diagnostico() {
 
 			{/* small screens: the same board as a list */}
 			<div className='shell py-24 lg:hidden'>
-				<h2 className='sr-only'>Desafios que resolvemos</h2>
 				<ol className='border-b border-line'>
 					{challenges.map((item, i) => (
 						<li key={item.code} className='border-t border-line py-6' data-reveal>

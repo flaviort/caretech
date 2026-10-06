@@ -8,9 +8,17 @@ import { SectionTag } from '@/components/ui/SectionTag'
 import { BoardList } from '@/components/ui/BoardList'
 import { Button, Arrow } from '@/components/ui/Button'
 import { ServiceIcon } from '@/components/ui/ServiceIcon'
-import { contact, getService, routes, services } from '@/content/site'
+import { Faq } from '@/components/ui/Faq'
+import { contact, getService, routes, services, type Service } from '@/content/site'
+import { JsonLd } from '@/components/seo/JsonLd'
+import { breadcrumb, clip, graph, pageMetadata, serviceNode, webPage } from '@/lib/seo'
 
 type Props = { params: Promise<{ slug: string }> }
+
+const servicePath = (service: Service) => `${routes.services}/${service.slug}`
+// summary plus the first items, trimmed to what a results page shows
+const describe = (service: Service) =>
+	clip(`${service.summary} ${service.listLabel}: ${service.items.slice(0, 5).join(', ')}.`)
 
 export function generateStaticParams() {
 	return services.map(service => ({ slug: service.slug }))
@@ -20,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const { slug } = await params
 	const service = getService(slug)
 	if (!service) return {}
-	return { title: service.title, description: `${service.summary} ${service.lead}` }
+	return pageMetadata({ title: service.title, description: describe(service), path: servicePath(service) })
 }
 
 export default async function ServicePage({ params }: Props) {
@@ -30,9 +38,27 @@ export default async function ServicePage({ params }: Props) {
 
 	const index = services.findIndex(s => s.slug === slug)
 	const next = services[(index + 1) % services.length]
+	const path = servicePath(service)
+	const trail = [
+		{ name: 'Serviços', path: routes.services },
+		{ name: service.title, path }
+	]
 
 	return (
 		<>
+			<JsonLd
+				data={graph(
+					webPage({
+						path,
+						name: service.title,
+						description: describe(service),
+						trail,
+						extra: { mainEntity: { '@id': serviceNode(service)['@id'] } }
+					}),
+					serviceNode(service),
+					breadcrumb(trail)
+				)}
+			/>
 			<section data-header='dark' className='relative h-[92svh] min-h-[620px] overflow-hidden bg-ink text-white'>
 				<div className='absolute inset-0' data-parallax='16'>
 					<div className='absolute inset-0' data-intro-media>
@@ -67,7 +93,7 @@ export default async function ServicePage({ params }: Props) {
 
 			<section className='bg-paper pb-28 pt-28 md:pb-40 md:pt-36'>
 				<div className='shell'>
-					<ScrubText
+					<ScrubText as='h2'
 						className='max-w-[30ch] lg:max-w-[34ch]'
 						before={<SectionTag index='S.01' label='Visão geral' className='statement-tag' />}
 						text={service.lead}
@@ -84,11 +110,35 @@ export default async function ServicePage({ params }: Props) {
 				</div>
 			</section>
 
+			<section className='bg-paper pb-28 md:pb-40'>
+				<div className='shell grid gap-10 border-t border-line pt-12 md:pt-16 lg:grid-cols-12 lg:gap-6'>
+					<h2 className='title-m max-w-[18ch] lg:col-span-4' data-reveal>
+						Como atuamos em {service.short}
+					</h2>
+					<div className='space-y-6 lg:col-span-7 lg:col-start-6'>
+						{service.approach.map(paragraph => (
+							<p key={paragraph.slice(0, 24)} className='body-l text-ink/80' data-reveal>
+								{paragraph}
+							</p>
+						))}
+					</div>
+				</div>
+			</section>
+
 			<section className='bg-mist py-28 md:py-40'>
 				<div className='shell'>
 					<blockquote className='display-l mx-auto max-w-[20ch] text-center'>
 						<Line onScroll>{service.phrase}</Line>
 					</blockquote>
+				</div>
+			</section>
+
+			<section className='bg-paper pt-28 md:pt-40'>
+				<div className='shell grid gap-10 lg:grid-cols-12 lg:gap-6'>
+					<h2 className='title-m max-w-[14ch] lg:col-span-4' data-reveal>
+						Perguntas frequentes
+					</h2>
+					<Faq items={service.faq} className='lg:col-span-8' />
 				</div>
 			</section>
 

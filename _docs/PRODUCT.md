@@ -38,7 +38,7 @@ Service lines (six):
 
 Site structure: Home, Sobre, Serviços (index plus one detail page per service), Cases, Contato, LGPD & Compliance.
 
-Contact: WhatsApp +55 (41) 9822-2437, e-mail contato@caretechit.com.br, plus a contact form (SendGrid already in dependencies; credentials not configured).
+Contact: WhatsApp +55 (41) 9822-2437, e-mail contato@caretechit.com.br, plus a contact form (sent through Resend; credentials pending from the client).
 
 ## Stack
 

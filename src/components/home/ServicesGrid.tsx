@@ -48,7 +48,7 @@ export function ServicesGrid() {
 	return (
 		<section className='bg-mist pb-24 pt-28 md:pb-32 md:pt-36'>
 			<div className='shell'>
-				<ScrubText
+				<ScrubText as='h2'
 					className='max-w-[30ch] lg:max-w-[34ch]'
 					before={<SectionTag index='S.02' label='Nossos serviços' className='statement-tag' />}
 					text='Seis frentes de atuação, da gestão estratégica da TI à inteligência artificial, sempre conectadas aos objetivos do negócio.'

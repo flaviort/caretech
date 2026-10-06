@@ -6,16 +6,21 @@ import { ServiceIcon } from '@/components/ui/ServiceIcon'
 import { Arrow } from '@/components/ui/Button'
 import { CursorPreview } from '@/components/pages/CursorPreview'
 import { images, routes, services } from '@/content/site'
+import { JsonLd } from '@/components/seo/JsonLd'
+import { breadcrumb, graph, pageMetadata, servicesList, webPage } from '@/lib/seo'
 
-export const metadata: Metadata = {
-	title: 'Serviços',
-	description:
-		'Gestão estratégica de TI, operações e sustentação, especialistas sob demanda, dados e analytics, integrações e automações e inteligência artificial.'
-}
+const title = 'Serviços de TI, Dados e Inteligência Artificial'
+const description =
+	'Gestão estratégica de TI, operações e sustentação, especialistas sob demanda, dados e analytics, integrações e automações e inteligência artificial para a sua organização.'
+
+export const metadata: Metadata = pageMetadata({ title, description, path: routes.services })
+
+const trail = [{ name: 'Serviços', path: routes.services }]
 
 export default function ServicosPage() {
 	return (
 		<>
+			<JsonLd data={graph(webPage({ type: 'CollectionPage', path: routes.services, name: title, description, trail, extra: { mainEntity: servicesList } }), breadcrumb(trail))} />
 			<PageHero
 				title={['Seis frentes,', 'um parceiro']}
 				lead='Da gestão da TI à inteligência artificial, cada serviço conectado aos objetivos estratégicos da sua organização.'

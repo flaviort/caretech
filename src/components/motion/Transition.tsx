@@ -29,7 +29,8 @@ const labels: Record<string, string> = {
 	'/lgpd-compliance': 'LGPD & Compliance'
 }
 
-const labelFor = (path: string) => labels[path] ?? (path.startsWith('/servicos/') ? 'Serviços' : '')
+const labelFor = (path: string) =>
+	labels[path] ?? (path.startsWith('/servicos/') ? 'Serviços' : path.startsWith('/cases/') ? 'Cases' : '')
 
 type ViewTransitionDoc = Document & {
 	startViewTransition?: (cb: () => Promise<void> | void) => {

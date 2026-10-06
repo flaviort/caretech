@@ -22,7 +22,7 @@ export function Intro() {
 	return (
 		<section className='bg-paper pb-28 pt-28 md:pb-40 md:pt-36'>
 			<div className='shell'>
-				<ScrubText
+				<ScrubText as='h2'
 					className='max-w-[30ch] lg:max-w-[34ch]'
 					before={<SectionTag index='S.01' label='Quem somos' className='statement-tag' />}
 					text='A CareTech é especializada em Tecnologia da Informação, Inteligência de Dados e Transformação Digital, criada para ajudar organizações a evoluírem seus processos e usarem a tecnologia como diferencial estratégico.'

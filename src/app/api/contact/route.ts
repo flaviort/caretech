@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import sgMail from '@sendgrid/mail'
+import { Resend } from 'resend'
 
 type Payload = {
 	name?: string
@@ -43,9 +43,10 @@ export async function POST(request: Request) {
 		return NextResponse.json({ error: 'Confira o e-mail informado.' }, { status: 422 })
 	}
 
-	const apiKey = process.env.SENDGRID_API_KEY
+	const apiKey = process.env.RESEND_API_KEY
 	const to = process.env.CONTACT_TO_EMAIL || 'contato@caretechit.com.br'
-	const from = process.env.CONTACT_FROM_EMAIL || 'site@caretechit.com.br'
+	// must be an address on a domain verified in Resend
+	const from = process.env.CONTACT_FROM_EMAIL || 'Site CareTech <site@caretechit.com.br>'
 
 	if (!apiKey) {
 		return NextResponse.json(
@@ -53,8 +54,6 @@ export async function POST(request: Request) {
 			{ status: 503 }
 		)
 	}
-
-	sgMail.setApiKey(apiKey)
 
 	const rows = [
 		['Nome', data.name],
@@ -65,7 +64,7 @@ export async function POST(request: Request) {
 	]
 
 	try {
-		await sgMail.send({
+		const { error } = await new Resend(apiKey).emails.send({
 			to,
 			from,
 			replyTo: data.email,
@@ -75,8 +74,11 @@ export async function POST(request: Request) {
 				.map(([k, v]) => `<tr><td><strong>${k}</strong></td><td>${escape(v)}</td></tr>`)
 				.join('')}</table><p>${escape(data.message).replace(/\n/g, '<br>')}</p>`
 		})
+		// Resend reports API failures in the result instead of throwing
+		if (error) throw error
 		return NextResponse.json({ ok: true })
-	} catch {
+	} catch (err) {
+		console.error('contact form: send failed', err)
 		return NextResponse.json(
 			{ error: 'Não conseguimos enviar agora. Tente de novo em instantes ou fale pelo WhatsApp.' },
 			{ status: 502 }

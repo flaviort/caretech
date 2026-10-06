@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { Fragment, useRef } from 'react'
 import clsx from 'clsx'
 import { gsap, useGSAP, prefersReducedMotion } from '@/components/motion/gsap'
 
@@ -14,7 +14,7 @@ type ScrubTextProps = {
 
 // Words start greyed and fill in as the statement scrolls through the viewport.
 export function ScrubText({ text, className, before, tone = 'light', as: Tag = 'p' }: ScrubTextProps) {
-	const ref = useRef<HTMLElement>(null)
+	const ref = useRef<HTMLDivElement>(null)
 
 	useGSAP(
 		() => {
@@ -36,18 +36,21 @@ export function ScrubText({ text, className, before, tone = 'light', as: Tag = '
 
 	const words = text.split(' ')
 
+	// The section tag floats beside the heading instead of inside it, so the heading's text is only the statement.
+	// Words are rendered once: crawlers and screen readers read the same sentence the reader sees.
 	return (
-		<Tag ref={ref as React.RefObject<never>} className={clsx('statement', className)}>
+		<div ref={ref} className={clsx('statement', className)}>
 			{before}
-			<span className='sr-only'>{text}</span>
-			<span aria-hidden='true'>
+			<Tag className='[text-wrap:pretty]'>
 				{words.map((word, i) => (
-					<span key={i} data-word className='inline-block'>
-						{word}
-						{i < words.length - 1 ? ' ' : ''}
-					</span>
+					<Fragment key={i}>
+						<span data-word className='inline-block'>
+							{word}
+						</span>
+						{i < words.length - 1 ? ' ' : null}
+					</Fragment>
 				))}
-			</span>
-		</Tag>
+			</Tag>
+		</div>
 	)
 }

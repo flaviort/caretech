@@ -6,7 +6,7 @@ export function Diferencial() {
 		<section className='bg-paper pb-28 md:pb-40'>
 			<div className='shell'>
 				<div className='border-t border-line pt-10 md:pt-14'>
-					<ScrubText
+					<ScrubText as='h2'
 						className='max-w-[30ch] lg:max-w-[34ch]'
 						before={<SectionTag index='S.04' label='Diferencial' className='statement-tag' />}
 						text='Muitas empresas entregam tecnologia. A CareTech entrega tecnologia conectada aos objetivos estratégicos da organização.'

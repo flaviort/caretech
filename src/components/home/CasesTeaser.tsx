@@ -3,9 +3,17 @@ import { Link } from '@/components/motion/Transition'
 import { Line } from '@/components/ui/Line'
 import { cases, routes } from '@/content/site'
 
-export function CaseCard({ item, priority }: { item: (typeof cases)[number]; priority?: boolean }) {
+export function CaseCard({
+	item,
+	priority,
+	headingAs: Heading = 'h3'
+}: {
+	item: (typeof cases)[number]
+	priority?: boolean
+	headingAs?: 'h2' | 'h3'
+}) {
 	return (
-		<Link href={`${routes.cases}#${item.slug}`} className='group block'>
+		<Link href={`${routes.cases}/${item.slug}`} className='group block'>
 			<div className='relative aspect-[16/10] overflow-hidden rounded-card bg-ink'>
 				<Image
 					src={item.image.src}
@@ -20,9 +28,9 @@ export function CaseCard({ item, priority }: { item: (typeof cases)[number]; pri
 					{item.code} · {item.sector}
 				</span>
 			</div>
-			<h3 className='mt-6 max-w-[18ch] text-[clamp(1.75rem,2.6vw,2.5rem)] font-semibold leading-[1] tracking-[-0.04em] transition-colors duration-300 group-hover:text-blue'>
+			<Heading className='mt-6 max-w-[18ch] text-[clamp(1.75rem,2.6vw,2.5rem)] font-semibold leading-[1] tracking-[-0.04em] transition-colors duration-300 group-hover:text-blue'>
 				{item.title}
-			</h3>
+			</Heading>
 			<ul className='mt-6 border-b border-line'>
 				{item.results.map(result => (
 					<li key={result} className='flex items-center gap-3 border-t border-line py-3 text-[1rem] font-medium tracking-[-0.01em]'>
