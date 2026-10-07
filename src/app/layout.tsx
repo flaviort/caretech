@@ -1,116 +1,92 @@
-// libraries
-import type { Metadata } from 'next'
-import { GoogleAnalytics } from '@next/third-parties/google'
+import type { Metadata, Viewport } from 'next'
+import { Geist, Geist_Mono } from 'next/font/google'
 
-// components
-import Guidelines from '@/components/Utils/Guidelines'
+import { SmoothScroll } from '@/components/motion/SmoothScroll'
+import { TransitionProvider } from '@/components/motion/Transition'
+import { PageAnimations } from '@/components/motion/PageAnimations'
+import { Header } from '@/components/layout/Header'
+import { Footer } from '@/components/layout/Footer'
+import { JsonLd } from '@/components/seo/JsonLd'
+import { graph, organization, website } from '@/lib/seo'
+import { CookieConsent } from '@/components/consent/CookieConsent'
+import { cookieConsent, site } from '@/content/site'
 
-// css
-import '@/assets/css/normalize.min.css'
-import '@/assets/css/bootstrap-grid.min.css'
-import '@/assets/scss/main.scss'
+import './globals.css'
 
-// fonts
-/*
-import { Afacad } from 'next/font/google'
+const geist = Geist({ subsets: ['latin'], variable: '--font-geist', display: 'swap' })
+const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono', display: 'swap' })
 
-const afacad = Afacad({
-	weight: ['400', '700'],
-	style: ['normal'],
-	subsets: ['latin'],
-	variable: '--font-afacad'
-})
-*/
+const verification = process.env.GOOGLE_SITE_VERIFICATION
 
-// metadata
 export const metadata: Metadata = {
-	metadataBase: new URL(`https://caretechit.com.br`),
-	alternates: {
-        canonical: './',
-    },
-	title: 'CareTech IT',
-	description: 'A CareTech IT é especializada em soluções tecnológicas e de TI para o setor de saúde, oferecendo sistemas e suporte para hospitais.',
+	metadataBase: new URL(site.url),
+	title: {
+		default: `${site.legalName} | ${site.slogan.join(' ')}`,
+		template: `%s | ${site.legalName}`
+	},
+	description: site.description,
+	applicationName: site.legalName,
+	authors: [{ name: site.legalName, url: site.url }],
+	creator: site.legalName,
+	publisher: site.legalName,
+	category: 'technology',
+	formatDetection: { telephone: false, email: false, address: false },
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 }
+	},
 	icons: {
-		icon: '/favicon/icon.svg'
+		icon: [
+			{ url: '/favicon/favicon.ico', sizes: '48x48' },
+			{ url: '/favicon/icon.svg', type: 'image/svg+xml' }
+		],
+		apple: '/favicon/apple-icon.png'
 	},
 	openGraph: {
-		title: 'CareTech IT',
-		description: 'A CareTech IT é especializada em soluções tecnológicas e de TI para o setor de saúde, oferecendo sistemas e suporte para hospitais.',
-		url: 'https://caretechit.com.br',
-		siteName: 'CareTech IT',
-		images: [
-			{
-				url: 'https://caretechit.com.br/img/og-image.png',
-				width: 1280,
-				height: 628,
-				alt: 'CareTech IT'
-			}
-		],
+		siteName: site.legalName,
 		locale: 'pt_BR',
 		type: 'website'
-	}
+	},
+	twitter: { card: 'summary_large_image' },
+	...(verification ? { verification: { google: verification } } : {})
 }
 
-export default function RootLayout({
-	children
-}: {
-	children: React.ReactNode
-}) {
+export const viewport: Viewport = {
+	themeColor: '#151515'
+}
 
-	// schema
-	const jsonLd = {
-		"@context": "https://schema.org",
-		"@type": "Organization",
-		"name": "CareTech IT",
-		"url": "https://caretechit.com.br",
-		"logo": "https://caretechit.com.br/img/logo.png",
-		"description": "A CareTech IT é especializada em soluções tecnológicas e de TI para o setor de saúde, oferecendo sistemas e suporte para hospitais.",
-		"founder": "Tiago Selusniaki",
-		"contactPoint": {
-			"@type": "ContactPoint",
-			"contactType": "customer support",
-			"telephone": "+55 (41) 9822-2437",
-			"email": "contato@caretechit.com.br"
-		},
-		"keywords": [
-			"CareTech IT",
-			"Saúde",
-			"Tecnologia",
-			"Hospitais",
-			"Sistemas de TI"
-		]
-	}
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang='pt-BR'>
-
+		<html lang='pt-BR' className={`${geist.variable} ${geistMono.variable}`}>
 			<head>
-				<meta name='apple-mobile-web-app-title' content='CareTech' />
+				<meta name='apple-mobile-web-app-title' content={site.name} />
+				{/* without JS the tile curtain would never open; a <style> is only valid in <head> */}
+				<noscript dangerouslySetInnerHTML={{ __html: '<style>#curtain{display:none}</style>' }} />
 			</head>
-
-			<body id='start'>
-
-				{/*
-				<a href='#main-content' className='skip-content button button--hollow-white text-12'>
-					Skip content
+			<body>
+				<a
+					href='#conteudo'
+					className='label fixed left-4 top-4 z-[200] -translate-y-24 rounded-md bg-blue px-4 py-3 text-white focus:translate-y-0'
+				>
+					Pular para o conteúdo
 				</a>
-				*/}
 
-				<div id='main-content'>
-					{children}
-				</div>
+				<SmoothScroll>
+					<TransitionProvider>
+						<Header />
+						<div id='page' className='bg-paper'>
+							<main id='conteudo'>{children}</main>
+							<Footer />
+						</div>
+						<PageAnimations />
+						{/* inside the provider so its link runs the page transition; tags load only on the production deploy */}
+						<CookieConsent gtmId={cookieConsent.gtmId} track={process.env.VERCEL_ENV === 'production'} />
+					</TransitionProvider>
+				</SmoothScroll>
 
-				{/*<Guidelines />*/}
-
-				<script
-					type='application/ld+json'
-					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-				/>
-
-				<GoogleAnalytics gaId='G-XXX' />
-
+				<JsonLd data={graph(organization, website)} />
 			</body>
-
 		</html>
 	)
 }

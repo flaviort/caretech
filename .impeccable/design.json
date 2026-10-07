@@ -1,0 +1,441 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-06T19:57:10+00:00",
+  "title": "Design System: CareTech",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Board Ink",
+        "canonical": "oklch(19.6% 0 0)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#151515",
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#808080",
+          "#a4a4a4",
+          "#cacaca"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Panel Ink",
+        "canonical": "oklch(27.2% 0.001 197)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#151515",
+          "#262727",
+          "#3f4040",
+          "#5d5e5e",
+          "#7f8080",
+          "#a4a5a5",
+          "#cacbcb"
+        ]
+      },
+      "mist": {
+        "role": "neutral",
+        "displayName": "Mist",
+        "canonical": "oklch(95.1% 0.007 160)",
+        "tonalRamp": [
+          "#222523",
+          "#3d413f",
+          "#5b5f5c",
+          "#7d817f",
+          "#a2a6a3",
+          "#c8cbc9",
+          "#dde4e0",
+          "#ebf0ed"
+        ]
+      },
+      "mist-2": {
+        "role": "neutral",
+        "displayName": "Mist Deep",
+        "canonical": "oklch(91.2% 0.009 161)",
+        "tonalRamp": [
+          "#212523",
+          "#3c413e",
+          "#5a5f5c",
+          "#7c827e",
+          "#a1a6a3",
+          "#c7ccc9",
+          "#dde4e0",
+          "#ecf0ed"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": [
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#808080",
+          "#a4a4a4",
+          "#cacaca",
+          "#eeeeee",
+          "#ffffff"
+        ]
+      },
+      "blue": {
+        "role": "primary",
+        "displayName": "CareTech Blue",
+        "canonical": "oklch(53.3% 0.190 257.3)",
+        "tonalRamp": [
+          "#000136",
+          "#001c60",
+          "#003a8d",
+          "#0367d7",
+          "#2e7de8",
+          "#62a5ff",
+          "#94cdff",
+          "#c1f1ff"
+        ]
+      },
+      "blue-2": {
+        "role": "primary",
+        "displayName": "Signal Blue",
+        "canonical": "oklch(61.4% 0.156 254.5)",
+        "tonalRamp": [
+          "#00062e",
+          "#002155",
+          "#003e7f",
+          "#125dac",
+          "#3885df",
+          "#6ba7f2",
+          "#9bceff",
+          "#c7f2ff"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Slate Muted",
+        "canonical": "oklch(49.8% 0.008 160)",
+        "tonalRamp": [
+          "#0a0c0a",
+          "#222523",
+          "#3d413f",
+          "#5f6461",
+          "#7d827f",
+          "#a1a6a3",
+          "#c8ccc9",
+          "#ecefed"
+        ]
+      },
+      "muted-dark": {
+        "role": "neutral",
+        "displayName": "Fog Muted",
+        "canonical": "oklch(72.7% 0.007 160)",
+        "tonalRamp": [
+          "#0a0c0b",
+          "#222523",
+          "#3d413f",
+          "#5b5f5c",
+          "#7d817f",
+          "#a3a8a5",
+          "#c8cbc9",
+          "#ecefed"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(89.1% 0.009 161)",
+        "tonalRamp": [
+          "#212523",
+          "#3c413e",
+          "#5a5f5c",
+          "#7c827e",
+          "#a1a6a3",
+          "#c7ccc9",
+          "#d6ddd9",
+          "#ecf0ed"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display-xl": {
+        "displayName": "Display XL",
+        "purpose": "Page hero titles and the cases teaser heading, set as masked lines."
+      },
+      "display-l": {
+        "displayName": "Display L",
+        "purpose": "Footer call, phrase band quotes, case headings."
+      },
+      "statement": {
+        "displayName": "Statement",
+        "purpose": "Scroll-scrubbed opening paragraph of each section, with the S.0x tag floated inline."
+      },
+      "title-m": {
+        "displayName": "Title M",
+        "purpose": "Card titles, menu links, footer board values, Diagnóstico answers."
+      },
+      "board-row": {
+        "displayName": "Board Row",
+        "purpose": "Every row of a board list, one size for all rows."
+      },
+      "body-l": {
+        "displayName": "Body L",
+        "purpose": "Leads beside heroes and section closers."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Card bullets, summaries, footer lists."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase mono annotations, codes, counters, button text, field labels."
+      }
+    },
+    "shadows": [
+      {
+        "name": "floating-preview",
+        "value": "0 24px 60px -20px rgba(0,0,0,0.5)",
+        "purpose": "Only the services index hover thumbnail that floats over a row."
+      },
+      {
+        "name": "focus-halo",
+        "value": "0 0 0 3px rgba(3,103,215,0.15)",
+        "purpose": "Form field focus, paired with a blue stroke."
+      },
+      {
+        "name": "focus-outline",
+        "value": "outline: 2px solid #0367d7; outline-offset: 3px",
+        "purpose": "Global :focus-visible ring."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Default easing for hovers, reveals, header and menu."
+      },
+      {
+        "name": "ease-in-out-quart",
+        "value": "cubic-bezier(0.76, 0, 0.24, 1)",
+        "purpose": "View-transition morph groups and page-out."
+      },
+      {
+        "name": "hover-color",
+        "value": "300ms ease-out-expo (500ms on cards and index rows)",
+        "purpose": "Inversion hovers on buttons, rows and cards."
+      },
+      {
+        "name": "tile-curtain-cover",
+        "value": "tiles scale 0 to 1.2, 0.42s power3.in, grid stagger from click point, amount 0.32",
+        "purpose": "Closes the magnet board over the page on internal navigation."
+      },
+      {
+        "name": "tile-curtain-reveal",
+        "value": "tiles scale to 0, 0.5s power3.inOut, grid stagger from end, amount 0.36",
+        "purpose": "Opens the board on the new route; first load opens from a solid blue panel with the white logo mark."
+      },
+      {
+        "name": "vt-morph",
+        "value": "group 0.85s ease-in-out-quart; old root 0.7s scale 0.96 + brightness 0.6; new root 0.9s clip-path inset 18% to 0, 0.15s delay",
+        "purpose": "Shared-element morph of a service title into the detail heading."
+      },
+      {
+        "name": "intro-line",
+        "value": "yPercent 105 to 0, 1.25s expo.out, stagger 0.08",
+        "purpose": "[data-intro] masked lines in the first viewport."
+      },
+      {
+        "name": "intro-fade",
+        "value": "y 16 to 0 with fade, 1.1s, delay 0.35s + 0.08s per item",
+        "purpose": "[data-intro-fade] leads, readouts and hero cards."
+      },
+      {
+        "name": "intro-media",
+        "value": "scale 1.14 to 1, 2.2s expo.out",
+        "purpose": "[data-intro-media] hero imagery settling."
+      },
+      {
+        "name": "scroll-line",
+        "value": "yPercent 105 to 0, 1.3s expo.out, stagger 0.09, start top 90%",
+        "purpose": "[data-line] masked lines on scroll."
+      },
+      {
+        "name": "scroll-reveal",
+        "value": "y 36 to 0 with fade, 1.1s expo.out, stagger 0.07, start top 88%",
+        "purpose": "[data-reveal] blocks entering the viewport."
+      },
+      {
+        "name": "parallax",
+        "value": "yPercent -n/2 to n/2 scrubbed across the parent",
+        "purpose": "[data-parallax=n] media drift."
+      },
+      {
+        "name": "scrub-statement",
+        "value": "word opacity 0.16 (0.22 on dark) to 1, scrub 0.6, top 82% to bottom 52%",
+        "purpose": "Section opening statements."
+      },
+      {
+        "name": "answer-in",
+        "value": "0.8s ease-out-expo: y 14px, blur 4px, fade",
+        "purpose": "Diagnóstico answer swap."
+      },
+      {
+        "name": "menu-lower",
+        "value": "page translateY(clamp(380px, 58vh, 540px)), 0.9s ease-out-expo, top corners 0.75rem",
+        "purpose": "Menu open: the page lowers like a card to reveal the ink panel."
+      },
+      {
+        "name": "lenis",
+        "value": "lerp 0.095, wheelMultiplier 0.95, driven by the GSAP ticker",
+        "purpose": "Smooth scroll synced with ScrollTrigger."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Ink Button",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "Default call to action on paper and mist: ink plate, mono label, white arrow chip; inverts to blue on hover.",
+      "html": "<a class=\"ds-btn ds-btn-ink\" href=\"#\"><span>Ver todos os serviços</span><span class=\"ds-btn-chip\"><svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" fill=\"none\" aria-hidden=\"true\"><path d=\"M2.5 8h11M9 3.5 13.5 8 9 12.5\" stroke=\"currentColor\" stroke-width=\"1.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></a>",
+      "css": ":host{--color-ink:#151515;--color-ink-2:#262727;--color-mist:#ebf0ed;--color-paper:#fff;--color-blue:#0367d7;--color-blue-2:#3885df;--color-muted:#5f6461;--color-muted-dark:#a3a8a5;--color-line:#d6ddd9;--ease-out-expo:cubic-bezier(0.16,1,0.3,1)}.ds-btn{display:inline-flex;align-items:center;gap:1.5rem;height:2.5rem;padding:0 0.25rem 0 1rem;border-radius:0.375rem;text-decoration:none;font-family:'Geist Mono',ui-monospace,monospace;font-size:0.6875rem;line-height:1.35;letter-spacing:0.04em;text-transform:uppercase;transition:background-color .3s var(--ease-out-expo),color .3s} .ds-btn-chip{display:grid;place-items:center;width:2rem;height:2rem;border-radius:5px;transition:background-color .3s,color .3s} .ds-btn-chip svg{transition:transform .5s var(--ease-out-expo)} .ds-btn:hover .ds-btn-chip svg{transform:translateX(2px)} .ds-btn:focus-visible{outline:2px solid var(--color-blue);outline-offset:3px} .ds-btn-ink{background:var(--color-ink);color:#fff} .ds-btn-ink .ds-btn-chip{background:#fff;color:var(--color-ink)} .ds-btn-ink:hover{background:var(--color-blue)} .ds-btn-ink:hover .ds-btn-chip{color:var(--color-ink)}"
+    },
+    {
+      "name": "Blue Button",
+      "kind": "button",
+      "refersTo": "button-blue",
+      "description": "WhatsApp call on dark scenes; inverts to ink on hover.",
+      "html": "<div style=\"background:#151515;padding:24px\"><a class=\"ds-btn-b\" href=\"#\"><span>Falar no WhatsApp</span><span class=\"ds-btn-b-chip\"><svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" fill=\"none\" aria-hidden=\"true\"><path d=\"M2.5 8h11M9 3.5 13.5 8 9 12.5\" stroke=\"currentColor\" stroke-width=\"1.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></a></div>",
+      "css": ":host{--color-ink:#151515;--color-ink-2:#262727;--color-mist:#ebf0ed;--color-paper:#fff;--color-blue:#0367d7;--color-blue-2:#3885df;--color-muted:#5f6461;--color-muted-dark:#a3a8a5;--color-line:#d6ddd9;--ease-out-expo:cubic-bezier(0.16,1,0.3,1)}.ds-btn-b{display:inline-flex;align-items:center;gap:1.5rem;height:2.5rem;padding:0 0.25rem 0 1rem;border-radius:0.375rem;text-decoration:none;font-family:'Geist Mono',ui-monospace,monospace;font-size:0.6875rem;line-height:1.35;letter-spacing:0.04em;text-transform:uppercase;background:var(--color-blue);color:#fff;transition:background-color .3s var(--ease-out-expo)} .ds-btn-b-chip{display:grid;place-items:center;width:2rem;height:2rem;border-radius:5px;background:#fff;color:var(--color-blue);transition:color .3s} .ds-btn-b:hover{background:var(--color-ink)} .ds-btn-b:hover .ds-btn-b-chip{color:var(--color-ink)} .ds-btn-b:focus-visible{outline:2px solid var(--color-blue);outline-offset:3px}"
+    },
+    {
+      "name": "Paper Button",
+      "kind": "button",
+      "refersTo": "button-paper",
+      "description": "Secondary call on ink grounds: white plate, ink chip; goes blue on hover.",
+      "html": "<div style=\"background:#151515;padding:24px\"><a class=\"ds-btn-p\" href=\"#\"><span>Enviar mensagem</span><span class=\"ds-btn-p-chip\"><svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" fill=\"none\" aria-hidden=\"true\"><path d=\"M2.5 8h11M9 3.5 13.5 8 9 12.5\" stroke=\"currentColor\" stroke-width=\"1.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></a></div>",
+      "css": ":host{--color-ink:#151515;--color-ink-2:#262727;--color-mist:#ebf0ed;--color-paper:#fff;--color-blue:#0367d7;--color-blue-2:#3885df;--color-muted:#5f6461;--color-muted-dark:#a3a8a5;--color-line:#d6ddd9;--ease-out-expo:cubic-bezier(0.16,1,0.3,1)}.ds-btn-p{display:inline-flex;align-items:center;gap:1.5rem;height:2.5rem;padding:0 0.25rem 0 1rem;border-radius:0.375rem;text-decoration:none;font-family:'Geist Mono',ui-monospace,monospace;font-size:0.6875rem;line-height:1.35;letter-spacing:0.04em;text-transform:uppercase;background:#fff;color:var(--color-ink);transition:background-color .3s var(--ease-out-expo),color .3s} .ds-btn-p-chip{display:grid;place-items:center;width:2rem;height:2rem;border-radius:5px;background:var(--color-ink);color:#fff;transition:background-color .3s,color .3s} .ds-btn-p:hover{background:var(--color-blue);color:#fff} .ds-btn-p:hover .ds-btn-p-chip{background:#fff;color:var(--color-blue)} .ds-btn-p:focus-visible{outline:2px solid var(--color-blue);outline-offset:3px}"
+    },
+    {
+      "name": "Section Tag",
+      "kind": "chip",
+      "refersTo": "section-tag-label",
+      "description": "Boxed index over a solid label, floated inline into the first line of a scrubbed statement. Never stacked above a heading.",
+      "html": "<p class=\"ds-statement\"><span class=\"ds-tag\" aria-hidden=\"true\"><span class=\"ds-tag-i\">S.02</span><span class=\"ds-tag-l\">Nossos serviços</span></span>Seis frentes de atuação, da gestão estratégica da TI à inteligência artificial.</p>",
+      "css": ":host{--color-ink:#151515;--color-ink-2:#262727;--color-mist:#ebf0ed;--color-paper:#fff;--color-blue:#0367d7;--color-blue-2:#3885df;--color-muted:#5f6461;--color-muted-dark:#a3a8a5;--color-line:#d6ddd9;--ease-out-expo:cubic-bezier(0.16,1,0.3,1)}.ds-statement{font-family:Geist,'Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:2rem;line-height:1.06;letter-spacing:-0.032em;color:var(--color-ink);max-width:30ch;margin:0} .ds-tag{float:left;display:inline-flex;flex-direction:column;align-items:flex-start;gap:4px;margin:0.3em 1.5rem 0 0} .ds-tag-i,.ds-tag-l{font-family:'Geist Mono',ui-monospace,monospace;font-size:0.6875rem;line-height:1.35;letter-spacing:0.04em;text-transform:uppercase;font-size:0.625rem;line-height:1;letter-spacing:0.04em;border-radius:3px;white-space:nowrap} .ds-tag-i{border:1px solid var(--color-ink);padding:1px 4px} .ds-tag-l{background:var(--color-ink);color:#fff;padding:3px 6px}"
+    },
+    {
+      "name": "Service Card",
+      "kind": "card",
+      "refersTo": "service-card",
+      "description": "Paper card on mist with line icon, mono code, magnet bullets, title and arrow chip; inverts to blue on hover.",
+      "html": "<div style=\"background:#ebf0ed;padding:24px\"><a class=\"ds-svc\" href=\"#\"><div class=\"ds-svc-top\"><svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.25\" stroke-linecap=\"round\" aria-hidden=\"true\"><path d=\"M3 3v18h18\"/><path d=\"M8 17V11M13 17V7M18 17v-4\"/></svg><span class=\"ds-svc-code\">ID</span></div><div><ul class=\"ds-svc-list\"><li><i></i>Business Intelligence</li><li><i></i>Power BI</li><li><i></i>Dashboards executivos</li></ul><div class=\"ds-svc-foot\"><h3>Inteligência de Dados e Analytics</h3><span class=\"ds-svc-chip\"><svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" fill=\"none\" aria-hidden=\"true\"><path d=\"M2.5 8h11M9 3.5 13.5 8 9 12.5\" stroke=\"currentColor\" stroke-width=\"1.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></div></div></a></div>",
+      "css": ":host{--color-ink:#151515;--color-ink-2:#262727;--color-mist:#ebf0ed;--color-paper:#fff;--color-blue:#0367d7;--color-blue-2:#3885df;--color-muted:#5f6461;--color-muted-dark:#a3a8a5;--color-line:#d6ddd9;--ease-out-expo:cubic-bezier(0.16,1,0.3,1)}.ds-svc{display:flex;flex-direction:column;justify-content:space-between;min-height:18rem;max-width:26rem;padding:1.5rem;border-radius:0.5rem;background:#fff;color:var(--color-ink);text-decoration:none;font-family:Geist,'Helvetica Neue',Arial,sans-serif;transition:background-color .5s var(--ease-out-expo),color .5s} .ds-svc-top{display:flex;justify-content:space-between;align-items:flex-start} .ds-svc-code{font-family:'Geist Mono',ui-monospace,monospace;font-size:0.6875rem;line-height:1.35;letter-spacing:0.04em;text-transform:uppercase;color:var(--color-muted);transition:color .5s} .ds-svc-list{list-style:none;padding:0;margin:0 0 1.5rem;font-size:0.9375rem;color:var(--color-muted);transition:color .5s} .ds-svc-list li{display:flex;align-items:center;gap:0.5rem;margin-top:0.375rem} .ds-svc-list i{width:0.5rem;height:0.5rem;border-radius:22%;background:var(--color-blue);transition:background-color .5s} .ds-svc-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem} .ds-svc-foot h3{margin:0;font-weight:600;font-size:1.75rem;line-height:1.08;letter-spacing:-0.025em;max-width:16ch} .ds-svc-chip{display:grid;place-items:center;flex-shrink:0;width:2rem;height:2rem;border-radius:5px;background:var(--color-ink);color:#fff;transition:background-color .5s,color .5s} .ds-svc:hover{background:var(--color-blue);color:#fff} .ds-svc:hover .ds-svc-code{color:rgba(255,255,255,.7)} .ds-svc:hover .ds-svc-list{color:rgba(255,255,255,.85)} .ds-svc:hover .ds-svc-list i{background:#fff} .ds-svc:hover .ds-svc-chip{background:#fff;color:var(--color-blue)} .ds-svc:focus-visible{outline:2px solid var(--color-blue);outline-offset:3px}"
+    },
+    {
+      "name": "Board List",
+      "kind": "custom",
+      "refersTo": "board-row",
+      "description": "Ruled rows with a magnet, one type size, and a mono counter; the row reverses to a blue plate on hover.",
+      "html": "<ul class=\"ds-board\"><li><i></i><span>Infraestrutura instável</span><em>01</em></li><li><i></i><span>Equipe de TI reduzida</span><em>02</em></li><li><i></i><span>Dados sem confiabilidade</span><em>03</em></li></ul>",
+      "css": ":host{--color-ink:#151515;--color-ink-2:#262727;--color-mist:#ebf0ed;--color-paper:#fff;--color-blue:#0367d7;--color-blue-2:#3885df;--color-muted:#5f6461;--color-muted-dark:#a3a8a5;--color-line:#d6ddd9;--ease-out-expo:cubic-bezier(0.16,1,0.3,1)}.ds-board{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--color-line);font-family:Geist,'Helvetica Neue',Arial,sans-serif;color:var(--color-ink)} .ds-board li{display:flex;align-items:center;gap:1.5rem;padding:1.25rem 0.75rem;border-top:1px solid var(--color-line);transition:background-color .3s,color .3s} .ds-board i{width:0.75rem;height:0.75rem;border-radius:22%;background:var(--color-blue);flex-shrink:0;transition:background-color .3s} .ds-board span{flex:1;font-size:1.375rem;font-weight:500;letter-spacing:-0.02em} .ds-board em{font-style:normal;font-family:'Geist Mono',ui-monospace,monospace;font-size:0.6875rem;line-height:1.35;letter-spacing:0.04em;text-transform:uppercase;font-variant-numeric:tabular-nums;color:var(--color-muted)} .ds-board li:hover{background:var(--color-blue);color:#fff} .ds-board li:hover i{background:#fff} .ds-board li:hover em{color:rgba(255,255,255,.75)}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Paper field with hairline stroke and a floating mono label; blue stroke and soft halo on focus.",
+      "html": "<div class=\"ds-field\"><input id=\"ds-n\" placeholder=\"Nome\"><label for=\"ds-n\">Nome *</label></div>",
+      "css": ":host{--color-ink:#151515;--color-ink-2:#262727;--color-mist:#ebf0ed;--color-paper:#fff;--color-blue:#0367d7;--color-blue-2:#3885df;--color-muted:#5f6461;--color-muted-dark:#a3a8a5;--color-line:#d6ddd9;--ease-out-expo:cubic-bezier(0.16,1,0.3,1)}.ds-field{position:relative;max-width:24rem} .ds-field input{width:100%;box-sizing:border-box;padding:1.75rem 1rem 0.75rem;border:1px solid var(--color-line);border-radius:0.375rem;background:#fff;font-family:Geist,'Helvetica Neue',Arial,sans-serif;font-size:1rem;color:var(--color-ink);outline:none;transition:border-color .3s,box-shadow .3s} .ds-field input::placeholder{color:transparent} .ds-field label{position:absolute;left:1rem;top:0.75rem;font-family:'Geist Mono',ui-monospace,monospace;font-size:0.6875rem;line-height:1.35;letter-spacing:0.04em;text-transform:uppercase;color:var(--color-muted);pointer-events:none;transition:color .3s} .ds-field input:hover{border-color:rgba(21,21,21,.4)} .ds-field input:focus{border-color:var(--color-blue);box-shadow:0 0 0 3px rgba(3,103,215,.15)} .ds-field input:focus + label{color:var(--color-blue)}"
+    },
+    {
+      "name": "Header and Menu Toggle",
+      "kind": "nav",
+      "refersTo": "menu-toggle",
+      "description": "Fixed header: logo left, Menu word and an outlined circle with two hairlines right; tone follows the section underneath.",
+      "html": "<div class=\"ds-nav\"><span class=\"ds-nav-logo\"><i></i>CARETECH</span><button class=\"ds-nav-btn\" type=\"button\"><span>Menu</span><span class=\"ds-nav-circle\"><b></b><b></b></span></button></div>",
+      "css": ":host{--color-ink:#151515;--color-ink-2:#262727;--color-mist:#ebf0ed;--color-paper:#fff;--color-blue:#0367d7;--color-blue-2:#3885df;--color-muted:#5f6461;--color-muted-dark:#a3a8a5;--color-line:#d6ddd9;--ease-out-expo:cubic-bezier(0.16,1,0.3,1)}.ds-nav{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 2rem;background:var(--color-ink);color:#fff;font-family:Geist,'Helvetica Neue',Arial,sans-serif;}  .ds-nav-logo{display:flex;align-items:center;gap:0.625rem;font-weight:700;font-size:1.25rem;letter-spacing:-0.02em} .ds-nav-logo i{width:14px;height:14px;border-radius:22%;background:var(--color-blue-2)}   .ds-nav-btn{display:flex;align-items:center;gap:0.75rem;background:none;border:0;color:inherit;cursor:pointer;font:500 0.8125rem/1 Geist,sans-serif;letter-spacing:-0.01em} .ds-nav-circle{position:relative;display:grid;place-items:center;width:2.75rem;height:2.75rem;border-radius:9999px;border:1px solid rgba(255,255,255,.6);transition:background-color .5s var(--ease-out-expo),border-color .5s} .ds-nav-circle b{position:absolute;width:1rem;height:1px;background:currentColor;transition:transform .5s var(--ease-out-expo)} .ds-nav-circle b:first-child{transform:translateY(-3px)} .ds-nav-circle b:last-child{transform:translateY(3px)} .ds-nav-btn:hover .ds-nav-circle{border-color:#fff;background:rgba(255,255,255,.1)} .ds-nav-btn:focus-visible{outline:2px solid var(--color-blue);outline-offset:3px;border-radius:9999px}"
+    },
+    {
+      "name": "Shift Strip",
+      "kind": "custom",
+      "refersTo": "magnet",
+      "description": "Footer board cell: 24 magnet cells for the day, past hours dimmed, current hour blue, a white marker at the exact minute.",
+      "html": "<div class=\"ds-shift\"><p class=\"ds-shift-l\">Agora</p><div class=\"ds-shift-g\"><i class=\"p\"></i><i class=\"p\"></i><i class=\"p\"></i><i class=\"p\"></i><i class=\"p\"></i><i class=\"p\"></i><i class=\"p\"></i><i class=\"p\"></i><i class=\"p\"></i><i class=\"p\"></i><i class=\"p\"></i><i class=\"p\"></i><i class=\"p\"></i><i class=\"p\"></i><i class=\"p\"></i><i class=\"p\"></i><i class=\"n\"></i><i class=\"\"></i><i class=\"\"></i><i class=\"\"></i><i class=\"\"></i><i class=\"\"></i><i class=\"\"></i><i class=\"\"></i><b style=\"left:69%\"></b></div><div class=\"ds-shift-s\"><span>00h</span><span>06h</span><span>12h</span><span>18h</span><span>24h</span></div></div>",
+      "css": ":host{--color-ink:#151515;--color-ink-2:#262727;--color-mist:#ebf0ed;--color-paper:#fff;--color-blue:#0367d7;--color-blue-2:#3885df;--color-muted:#5f6461;--color-muted-dark:#a3a8a5;--color-line:#d6ddd9;--ease-out-expo:cubic-bezier(0.16,1,0.3,1)}.ds-shift{background:var(--color-ink-2);padding:1.5rem;border-radius:0.5rem;max-width:40rem} .ds-shift-l,.ds-shift-s{font-family:'Geist Mono',ui-monospace,monospace;font-size:0.6875rem;line-height:1.35;letter-spacing:0.04em;text-transform:uppercase;color:var(--color-muted-dark);margin:0} .ds-shift-l{margin-bottom:1.5rem} .ds-shift-g{position:relative;display:grid;grid-template-columns:repeat(24,1fr);gap:4px} .ds-shift-g i{aspect-ratio:1;border-radius:22%;background:rgba(255,255,255,.08)} .ds-shift-g i.p{background:rgba(255,255,255,.22)} .ds-shift-g i.n{background:var(--color-blue)} .ds-shift-g b{position:absolute;top:-8px;bottom:-8px;width:1px;background:#fff} .ds-shift-s{display:flex;justify-content:space-between;margin-top:0.75rem}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Operations Board",
+    "overview": "CareTech's site reads like the status board of a hospital that runs well: calm, exact, everything in view. Information sits on ruled rows and flat tiles, set in one bold, tight neo-grotesk with tiny uppercase mono annotations, and the only thing that ever lights up is CareTech blue. The layout grammar is borrowed openly from cominvi.com.mx, a reference the user pinned, with CareTech blue taking the place of Cominvi's orange. Near-black, pale mint-gray and white do all the structural work.\n\nThe signature object is the logo's rounded-square module, used as the board's \"magnet\": a 22%-rounded square that marks list items, fills the 24-hour shift strip, and tiles the whole viewport in blue during page transitions. The page also knows the real Brasília hour, shown in the hero readout and the footer board. Depth is flat and tonal. Emphasis comes from inversion (a row or card flips to solid blue on hover), never from shadows or gradients on UI.\n\nDensity is generous between sections and tight inside them. Sections alternate paper and mist, with ink reserved for full-bleed photographic scenes, the phrase band and the footer. Photography is always darkened and tinted toward the blue with a color-blend overlay so it reads as one material.",
+    "keyCharacteristics": [
+      "Four colors carry the world: ink, mist, paper, and blue as the single accent.",
+      "Bold Geist display at tight negative tracking against 11px Geist Mono uppercase labels.",
+      "The 22% rounded-square magnet from the logo as the recurring status mark.",
+      "Hover is inversion: light surfaces go blue, dark surfaces go white.",
+      "Flat tonal depth, hairline rules, 8px card corners.",
+      "Motion is orchestrated and sweeping: a blue tile-board curtain between pages, masked line rises, scroll-scrubbed statements."
+    ],
+    "rules": [
+      {
+        "name": "The Single Light Rule",
+        "body": "Blue is the only hue that lights up. If something needs attention, it turns blue or carries a blue magnet; no other accent color is introduced.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tinted Photograph Rule",
+        "body": "Every photograph sits on ink, is darkened (ink at 30 to 60%), and gets a blue color-blend overlay. Untreated stock color never reaches the page.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Size Board Rule",
+        "body": "Rows on a board share one type size. Rank is carried by weight, case, the mono counter and the reversed hover plate, never by making one row bigger.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Clock Rule",
+        "body": "Every live number (clocks, counters, codes) uses tabular figures so the board never jitters.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Board Rule",
+        "body": "Surfaces sit flat at rest and on hover. A state change is a color inversion, not a lift.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep blue the only accent, and use signal blue only on ink.",
+      "Do express hover as inversion: light surfaces go solid blue with white content, dark surfaces go white with ink content.",
+      "Do mark list items, current states and statuses with the 22% rounded-square magnet.",
+      "Do set every label, code and counter in uppercase Geist Mono at 0.6875rem with tabular figures where numeric.",
+      "Do open sections with a scrubbed statement, with the S.0x section tag floated inline into its first line.",
+      "Do darken and blue-tint every photograph with a color-blend overlay.",
+      "Do keep cards at 0.5rem corners and rely on tonal grounds and hairlines for structure.",
+      "Do honor reduced motion everywhere a curtain, scrub, pin or parallax runs."
+    ],
+    "donts": [
+      "Don't stack a label or tag above a heading; the section tag lives inline at the start of the text it indexes.",
+      "Don't add drop shadows to cards, buttons or rows; the floating preview on the services index is the only shadow.",
+      "Don't vary type size between rows of the same board.",
+      "Don't introduce a second accent hue, gradients on UI, or untreated stock photography.",
+      "Don't invent metrics, client names or testimonials to fill a stat grid; facts that are statements are set as text rows.",
+      "Don't imply a 24h on-call service in labels or readouts; the clock shows the hour, not a shift."
+    ]
+  }
+}
