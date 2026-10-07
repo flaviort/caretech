@@ -4,7 +4,7 @@ Work through it top to bottom. The first two sections block the contact form and
 
 ## 1. Deploy and domain
 
-- [ ] Merge `stage` into `main` and confirm the production deploy on Vercel is green.
+- [x] Merge `stage` into `main` and confirm the production deploy on Vercel is green.
 - [ ] Point `caretechit.com.br` at the Vercel project and set `www.caretechit.com.br` to redirect to it (or the other way round, but pick one; the canonical tags use the bare domain).
 - [ ] Open `https://caretechit.com.br/robots.txt` and `/sitemap.xml` and confirm both mention `caretechit.com.br` (the old files pointed to another site).
 - [ ] Set the production env vars on Vercel (see `.env.example`), then redeploy:
@@ -62,5 +62,5 @@ Until `RESEND_API_KEY` is set, the form answers with a message pointing visitors
 
 - [ ] Send `_docs/briefing-conteudo-cliente.md` to the client: approval of the new service copy and FAQs, plus the questions that let us deepen services and cases.
 - [ ] Keep the Shutterstock license records for the 11 licensed photos somewhere the client can find them.
-- [ ] Delete `src/assets/img/og-image.png`; it's the old temporary-site image and nothing uses it.
+- [x] Delete `src/assets/img/og-image.png`; it's the old temporary-site image and nothing uses it.
 - [ ] When page content changes, bump the `updated` date in `src/app/sitemap.ts`.

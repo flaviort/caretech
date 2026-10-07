@@ -81,6 +81,5 @@ The preview config in `.claude/launch.json` runs the dev server on port 3100 (`c
 
 ## Open items
 
-- `src/assets/img/og-image.png` is the old OG image from the temporary site and is no longer used.
 - Submit `https://caretechit.com.br/sitemap.xml` in Google Search Console once the site is live.
 - Resend is not set up yet: the API key and domain verification come from the client. Steps are in `_docs/post-launch-checklist.md`.
