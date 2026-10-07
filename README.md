@@ -20,7 +20,6 @@ Copy `.env.example` to `.env.local`.
 | `RESEND_API_KEY` | Enables the contact form. Without it the form answers with a message pointing to WhatsApp and e-mail. |
 | `CONTACT_TO_EMAIL` | Inbox that receives form messages (default `contato@caretechit.com.br`). |
 | `CONTACT_FROM_EMAIL` | Sender on a domain verified in Resend (default `Site CareTech <site@caretechit.com.br>`). |
-| `NEXT_PUBLIC_GA_ID` | Google Analytics ID. GA only loads when this is set. |
 | `GOOGLE_SITE_VERIFICATION` | Google Search Console verification token. Optional. |
 
 ## Where things live

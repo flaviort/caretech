@@ -3,6 +3,7 @@ import { Logo } from '@/components/brand/Logo'
 import { Button } from '@/components/ui/Button'
 import { LiveClock } from '@/components/ui/LiveClock'
 import { ShiftStrip } from '@/components/ui/ShiftStrip'
+import { ConsentLink } from '@/components/consent/ConsentLink'
 import { contact, nav, routes, services, site } from '@/content/site'
 
 export function Footer() {
@@ -100,9 +101,12 @@ export function Footer() {
 					<span>
 						© {new Date().getFullYear()} {site.legalName}. Todos os direitos reservados.
 					</span>
-					<Link href={routes.privacy} className='hover:text-white'>
-						LGPD & Compliance
-					</Link>
+					<span className='flex gap-6'>
+						<Link href={routes.privacy} className='hover:text-white'>
+							LGPD & Compliance
+						</Link>
+						<ConsentLink className='label hover:text-white'>Cookies</ConsentLink>
+					</span>
 				</div>
 			</div>
 		</footer>

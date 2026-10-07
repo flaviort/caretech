@@ -29,8 +29,9 @@ Project docs live in `_docs/`. Keep only `README.md` and this file at the root; 
 - Tailwind CSS v4 via `@tailwindcss/postcss`. Tokens are in `src/app/globals.css`, not a Tailwind config file.
 - Lenis smooth scroll, GSAP (+ `@gsap/react`) and the View Transitions API for page transitions. Three.js for the logo mark on Home (`MarkThree.tsx`).
 - Geist and Geist Mono via `next/font/google`.
+- Analytics: Google Tag Manager (`GTM-PMP4P8FM`, in `cookieConsent` in `site.ts`) loads only after the visitor accepts the cookie banner (`src/components/consent/CookieConsent.tsx`), and only on the production deploy (`VERCEL_ENV=production`). GA4 is configured inside GTM, never as a separate tag. The choice lives in `localStorage` for 12 months; the footer "Cookies" link and the LGPD page reopen it. A new tracking category (ads, pixels) needs its own toggle in the banner first.
 - Contact form: `react-hook-form` posting to `src/app/api/contact/route.ts`, which sends through Resend. Without `RESEND_API_KEY` it answers with a message pointing to WhatsApp and e-mail.
-- Sitemap, robots and manifest are Next metadata routes (`src/app/sitemap.ts`, `robots.ts`, `manifest.ts`). GA only loads when `NEXT_PUBLIC_GA_ID` is set; `GOOGLE_SITE_VERIFICATION` adds the Search Console meta tag.
+- Sitemap, robots and manifest are Next metadata routes (`src/app/sitemap.ts`, `robots.ts`, `manifest.ts`). `GOOGLE_SITE_VERIFICATION` adds the Search Console meta tag.
 - Deployed on Vercel. Work happens on `stage`; PRs go to `main`.
 
 ## Commands

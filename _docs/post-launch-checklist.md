@@ -12,7 +12,6 @@ Work through it top to bottom. The first two sections block the contact form and
   - [ ] `CONTACT_TO_EMAIL` (defaults to `contato@caretechit.com.br`)
   - [ ] `CONTACT_FROM_EMAIL` (defaults to `Site CareTech <site@caretechit.com.br>`)
   - [ ] `GOOGLE_SITE_VERIFICATION` (only if Search Console is verified by meta tag, see section 3)
-  - [ ] `NEXT_PUBLIC_GA_ID` (only after the consent decision in section 4)
 
 ## 2. Contact form (Resend)
 
@@ -40,8 +39,9 @@ Until `RESEND_API_KEY` is set, the form answers with a message pointing visitors
 
 ## 4. Analytics and LGPD
 
-- [ ] Decide with the client whether GA runs with a cookie consent banner. The site has no banner today, and under LGPD analytics cookies need consent. Don't set `NEXT_PUBLIC_GA_ID` until this is settled.
-- [ ] If GA goes on: create the GA4 property, set the ID, and confirm page views show up in Realtime.
+- [x] Cookie banner shipped. GTM (`GTM-PMP4P8FM`) loads only after consent and only on production.
+- [ ] In GTM, add the GA4 Google tag (Initialization - All Pages trigger) and publish the container. Don't also add GA directly to the site.
+- [ ] Accept the banner on the live site and confirm page views show up in GA4 Realtime. Then reject and confirm they stop.
 - [ ] Decide whether to track the contact actions (form sent, WhatsApp click, e-mail click) as events. None are wired yet.
 - [ ] Optional: turn on Vercel Web Analytics and Speed Insights, which are cookieless.
 

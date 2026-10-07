@@ -267,3 +267,19 @@ html.menu-open #page {
 		filter: none;
 	}
 }
+
+/* cookie banner rises in once; reduced motion shows it in place */
+@keyframes consent-in {
+	from {
+		opacity: 0;
+		transform: translateY(1.5rem);
+	}
+}
+.consent-in {
+	animation: consent-in 0.9s var(--ease-out-expo) both;
+}
+@media (prefers-reduced-motion: reduce) {
+	.consent-in {
+		animation: none;
+	}
+}

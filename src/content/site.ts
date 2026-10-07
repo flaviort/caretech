@@ -436,3 +436,27 @@ export const compliance = [
 	'Segurança da Informação',
 	'Conformidade Legal'
 ]
+
+// Cookie consent. List only categories the site really uses; GA loads after the visitor opts in.
+export const cookieConsent = {
+	gtmId: 'GTM-PMP4P8FM',
+	label: 'Cookies e privacidade',
+	text: 'Usamos cookies de análise (Google Analytics) para entender como o site é usado e melhorá-lo. Eles só são ativados se você permitir, e você pode mudar a escolha quando quiser pelo rodapé.',
+	prefsLabel: 'Preferências de cookies',
+	statement:
+		'Este site só usa cookies de análise com a sua permissão. Você escolhe o que fica ativo e pode mudar de ideia a qualquer momento.',
+	categories: [
+		{
+			id: 'necessary',
+			title: 'Necessários',
+			text: 'Guardam neste navegador a sua escolha sobre cookies. Não identificam você e não podem ser desligados.',
+			locked: true
+		},
+		{
+			id: 'analytics',
+			title: 'Análise',
+			text: 'Google Analytics: páginas visitadas, tempo de navegação, tipo de dispositivo e região aproximada, em dados agregados. Sem uso para publicidade.',
+			locked: false
+		}
+	]
+} as const

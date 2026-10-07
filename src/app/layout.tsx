@@ -1,15 +1,15 @@
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import { GoogleAnalytics } from '@next/third-parties/google'
 
 import { SmoothScroll } from '@/components/motion/SmoothScroll'
 import { TransitionProvider } from '@/components/motion/Transition'
 import { PageAnimations } from '@/components/motion/PageAnimations'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { site } from '@/content/site'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { graph, organization, website } from '@/lib/seo'
+import { CookieConsent } from '@/components/consent/CookieConsent'
+import { cookieConsent, site } from '@/content/site'
 
 import './globals.css'
 
@@ -57,8 +57,6 @@ export const viewport: Viewport = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-	const gaId = process.env.NEXT_PUBLIC_GA_ID
-
 	return (
 		<html lang='pt-BR' className={`${geist.variable} ${geistMono.variable}`}>
 			<head>
@@ -82,11 +80,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 							<Footer />
 						</div>
 						<PageAnimations />
+						{/* inside the provider so its link runs the page transition; tags load only on the production deploy */}
+						<CookieConsent gtmId={cookieConsent.gtmId} track={process.env.VERCEL_ENV === 'production'} />
 					</TransitionProvider>
 				</SmoothScroll>
 
 				<JsonLd data={graph(organization, website)} />
-				{gaId && <GoogleAnalytics gaId={gaId} />}
 			</body>
 		</html>
 	)
