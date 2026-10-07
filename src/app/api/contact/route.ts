@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { buildContactEmail } from '@/lib/contact-email'
 
 type Payload = {
 	name?: string
@@ -13,8 +14,6 @@ type Payload = {
 }
 
 const clean = (value: unknown, max = 2000) => (typeof value === 'string' ? value.trim().slice(0, max) : '')
-const escape = (value: string) =>
-	value.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c] ?? c)
 
 export async function POST(request: Request) {
 	let body: Payload
@@ -55,24 +54,16 @@ export async function POST(request: Request) {
 		)
 	}
 
-	const rows = [
-		['Nome', data.name],
-		['Empresa', data.company || '-'],
-		['E-mail', data.email],
-		['Telefone', data.phone || '-'],
-		['Assunto', data.subject || '-']
-	]
+	const { subject, html, text } = buildContactEmail(data)
 
 	try {
 		const { error } = await new Resend(apiKey).emails.send({
 			to,
 			from,
 			replyTo: data.email,
-			subject: `Contato pelo site: ${data.name}${data.company ? ` (${data.company})` : ''}`,
-			text: `${rows.map(([k, v]) => `${k}: ${v}`).join('\n')}\n\n${data.message}`,
-			html: `<table>${rows
-				.map(([k, v]) => `<tr><td><strong>${k}</strong></td><td>${escape(v)}</td></tr>`)
-				.join('')}</table><p>${escape(data.message).replace(/\n/g, '<br>')}</p>`
+			subject,
+			text,
+			html
 		})
 		// Resend reports API failures in the result instead of throwing
 		if (error) throw error
