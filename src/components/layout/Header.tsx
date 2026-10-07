@@ -38,20 +38,23 @@ function useHeaderTone() {
 	return dark
 }
 
-// Cominvi behaviour: the bar steps out of the way while reading down and returns on the way up.
+// Cominvi behaviour: the bar steps out of the way while reading down and returns once the reader
+// has scrolled back up a deliberate 50px, so a small correction mid-paragraph does not bring it back.
+const REVEAL_AFTER = 50
+
 function useHeaderHidden() {
 	const [hidden, setHidden] = useState(false)
-	useLenis(lenis => {
-		if (lenis.scroll < 120) setHidden(false)
-		else if (lenis.direction === 1) setHidden(true)
-		else if (lenis.direction === -1) setHidden(false)
-	})
 	useEffect(() => {
+		// Lenis scrolls the window, so native scroll events cover both smooth and touch scrolling
 		let last = window.scrollY
+		let turn = last // deepest point of the current downward run
 		const onScroll = () => {
 			const y = window.scrollY
 			if (y < 120) setHidden(false)
-			else if (Math.abs(y - last) > 4) setHidden(y > last)
+			else if (y > last) {
+				turn = y
+				if (y - last > 4) setHidden(true)
+			} else if (turn - y >= REVEAL_AFTER) setHidden(false)
 			last = y
 		}
 		const reset = () => setHidden(false)
@@ -268,14 +271,20 @@ export function Header() {
 						</ul>
 					</div>
 				</div>
-				<div className='label mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-white/15 pt-4 text-muted-dark'>
-					<a href={contact.whatsappHref} target='_blank' rel='noopener noreferrer' className='hover:text-white'>
-						WhatsApp {contact.whatsappDisplay}
+				<div className='mt-7 flex flex-wrap items-end gap-x-10 gap-y-4 border-t border-white/15 pt-5'>
+					<a href={contact.whatsappHref} target='_blank' rel='noopener noreferrer' className='group'>
+						<span className='label block text-muted-dark'>WhatsApp</span>
+						<span className='tnum mt-1 block text-lg font-medium tracking-[-0.02em] transition-colors duration-300 group-hover:text-blue-2'>
+							{contact.whatsappDisplay}
+						</span>
 					</a>
-					<a href={`mailto:${contact.email}`} className='hover:text-white'>
-						{contact.email}
+					<a href={`mailto:${contact.email}`} className='group'>
+						<span className='label block text-muted-dark'>E-mail</span>
+						<span className='mt-1 block text-lg font-medium tracking-[-0.02em] transition-colors duration-300 group-hover:text-blue-2'>
+							{contact.email}
+						</span>
 					</a>
-					<span>{contact.coverage}</span>
+					<span className='label text-muted-dark md:ml-auto'>{contact.coverage}</span>
 				</div>
 			</nav>
 		</>

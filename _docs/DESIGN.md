@@ -265,7 +265,7 @@ Soft-cornered pill with a square arrow chip on its right edge, the Cominvi contr
 - **Text link variant:** mono label with a 1px bottom rule ("Saiba mais"); hover turns rule and text blue.
 
 ### Chips
-- **Section tag:** a stacked pair set inline, floated left into the first line of a statement or heading: a boxed index ("S.02", 1px ink border) above a solid ink label ("NOSSOS SERVIÇOS"). Inverts on dark ground. It is the section's index, not a heading.
+- **Section tag:** a stacked pair set inline, floated left into the first line of a statement or heading: a boxed index ("S.02", 1px ink border) above a solid ink label ("NOSSOS SERVIÇOS"). Inverts on dark ground. It is the section's index, not a heading. Below 768px the column is too narrow to float it, so on phones it sits above the statement with 1rem below it.
 - **Media label:** white 3px-cornered mono label pinned top-left on case images ("C1 · SAÚDE"); hero cards carry a white bottom bar with an arrow that turns blue on hover.
 
 ### Cards / Containers
@@ -319,7 +319,7 @@ Interior pages open on paper with a Display XL title in masked lines, a lead in 
 - **Do** honor reduced motion everywhere a curtain, scrub, pin or parallax runs.
 
 ### Don't:
-- **Don't** stack a label or tag above a heading; the section tag lives inline at the start of the text it indexes.
+- **Don't** stack a label or tag above a heading; the section tag lives inline at the start of the text it indexes. The one exception is phones (below 768px), where the section tag moves above the statement.
 - **Don't** add drop shadows to cards, buttons or rows; the floating preview on the services index is the only shadow.
 - **Don't** vary type size between rows of the same board.
 - **Don't** introduce a second accent hue, gradients on UI, or untreated stock photography.

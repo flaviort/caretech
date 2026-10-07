@@ -9,7 +9,7 @@ import { BoardList } from '@/components/ui/BoardList'
 import { Button, Arrow } from '@/components/ui/Button'
 import { ServiceIcon } from '@/components/ui/ServiceIcon'
 import { Faq } from '@/components/ui/Faq'
-import { contact, getService, routes, services, type Service } from '@/content/site'
+import { getService, routes, services, whatsappLink, type Service } from '@/content/site'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { breadcrumb, clip, graph, pageMetadata, serviceNode, webPage } from '@/lib/seo'
 
@@ -83,7 +83,14 @@ export default async function ServicePage({ params }: Props) {
 								<ServiceIcon code={service.code} className='size-4' />
 								{service.code} [#{String(index + 1).padStart(2, '0')}/{String(services.length).padStart(2, '0')}]
 							</p>
-							<Button href={contact.whatsappHref} tone='blue' external className='mt-6'>
+							<Button
+								href={whatsappLink(
+									`Olá, CareTech! Vim pelo site, pela página de ${service.title}, e gostaria de conversar sobre como vocês podem ajudar a minha organização.`
+								)}
+								tone='blue'
+								external
+								className='mt-6'
+							>
 								Falar sobre este serviço
 							</Button>
 						</div>
@@ -111,7 +118,7 @@ export default async function ServicePage({ params }: Props) {
 			</section>
 
 			<section className='bg-paper pb-28 md:pb-40'>
-				<div className='shell grid gap-10 border-t border-line pt-12 md:pt-16 lg:grid-cols-12 lg:gap-6'>
+				<div className='shell grid gap-10 lg:grid-cols-12 lg:gap-6 lg:border-t lg:border-line lg:pt-16'>
 					<h2 className='title-m max-w-[18ch] lg:col-span-4' data-reveal>
 						Como atuamos em {service.short}
 					</h2>

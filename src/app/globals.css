@@ -30,6 +30,8 @@
 		text-rendering: optimizeLegibility;
 		scrollbar-color: var(--color-ink) var(--color-mist);
 		scrollbar-width: thin;
+		/* iOS Safari otherwise bounces past the footer and shows a tall band of ink */
+		overscroll-behavior-y: none;
 	}
 
 	body {
@@ -144,6 +146,16 @@
 	--tag-baseline: 0.835em; /* line-height 0.95 */
 }
 
+/* phones: the narrow column leaves no room beside the first line, so the tag sits above the statement */
+@media (max-width: 767px) {
+	.statement-tag {
+		float: none;
+		display: flex;
+		width: max-content;
+		margin: 0 0 1rem;
+	}
+}
+
 @media (min-width: 768px) {
 	.statement-tag {
 		margin-right: 1.5rem;
@@ -225,6 +237,13 @@ html.vt-morph::view-transition-group(*) {
 /* menu: the page is a card that lowers to reveal the ink panel above it */
 :root {
 	--menu-h: clamp(380px, 58vh, 540px);
+}
+
+/* phones stack the two link columns and the contacts, so the panel needs more room under the header */
+@media (max-width: 767px) {
+	:root {
+		--menu-h: clamp(520px, 66svh, 580px);
+	}
 }
 
 #page {

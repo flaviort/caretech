@@ -5,7 +5,7 @@ export function Diferencial() {
 	return (
 		<section className='bg-paper pb-28 md:pb-40'>
 			<div className='shell'>
-				<div className='border-t border-line pt-10 md:pt-14'>
+				<div className='lg:border-t lg:border-line lg:pt-14'>
 					<ScrubText as='h2'
 						className='max-w-[30ch] lg:max-w-[34ch]'
 						before={<SectionTag index='S.04' label='Diferencial' className='statement-tag' />}

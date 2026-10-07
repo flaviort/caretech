@@ -58,9 +58,11 @@ export function Footer() {
 					</a>
 				</div>
 
-				<div className='mt-24 grid gap-10 border-t border-white/15 pt-10 md:grid-cols-12'>
+				<div className='mt-16 grid gap-10 md:mt-24 md:grid-cols-12 md:border-t md:border-white/15 md:pt-10'>
 					<div className='md:col-span-5'>
-						<Logo className='h-10 w-auto' />
+						<Link href={routes.home} aria-label='CareTech, página inicial' className='inline-block rounded-sm'>
+							<Logo className='h-10 w-auto' />
+						</Link>
 						<p className='mt-6 max-w-sm text-[0.9375rem] leading-relaxed text-muted-dark'>
 							{site.slogan.join(' ')}
 						</p>

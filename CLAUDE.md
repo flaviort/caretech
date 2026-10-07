@@ -61,7 +61,7 @@ The preview config in `.claude/launch.json` runs the dev server on port 3100 (`c
 - Internal links use `Link` from `src/components/motion/Transition.tsx`, not `next/link`, so the tile transition runs. Service cards use `kind="morph"`.
 - Animation hooks are data attributes (`data-intro`, `data-intro-fade`, `data-intro-media`, `data-line`, `data-reveal`, `data-parallax`) handled in `PageAnimations.tsx`.
 - Every curtain, scrub, pin and parallax must respect `prefers-reduced-motion`.
-- Blue (#0367d7) is the only accent. Hover is inversion. No drop shadows except the floating preview on the services index. No labels stacked above headings; the `S.0x` tag sits inline in the first line.
+- Blue (#0367d7) is the only accent. Hover is inversion. No drop shadows except the floating preview on the services index. No labels stacked above headings; the `S.0x` tag sits inline in the first line (on phones, below 768px, it moves above the statement).
 
 ## SEO
 

@@ -11,11 +11,12 @@ export const site = {
 	founderYears: 15
 }
 
+// wa.me link with the first message already typed
+export const whatsappLink = (message: string) => 'https://wa.me/554198222437?text=' + encodeURIComponent(message)
+
 export const contact = {
 	whatsappDisplay: '(41) 9822-2437',
-	whatsappHref:
-		'https://wa.me/554198222437?text=' +
-		encodeURIComponent('Olá, CareTech! Gostaria de conversar sobre um projeto.'),
+	whatsappHref: whatsappLink('Olá, CareTech! Gostaria de conversar sobre um projeto.'),
 	email: 'contato@caretechit.com.br',
 	coverage: 'Atendimento Nacional'
 }

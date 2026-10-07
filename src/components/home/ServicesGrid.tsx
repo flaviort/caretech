@@ -10,7 +10,7 @@ export function ServiceCard({ service }: { service: (typeof services)[number] })
 		<Link
 			href={`${routes.services}/${service.slug}`}
 			kind='morph'
-			className='group relative flex min-h-72 flex-col sm:aspect-[4/3.4] sm:min-h-0 justify-between overflow-hidden rounded-card bg-paper p-5 text-ink transition-colors duration-500 ease-out-expo hover:bg-blue hover:text-white md:p-6'
+			className='group relative flex min-h-72 flex-col gap-8 sm:aspect-[4/3.4] sm:min-h-0 justify-between overflow-hidden rounded-card bg-paper p-5 text-ink transition-colors duration-500 ease-out-expo hover:bg-blue hover:text-white md:p-6'
 		>
 			<div className='flex items-start justify-between'>
 				<ServiceIcon code={service.code} className='size-7 md:size-8' />
