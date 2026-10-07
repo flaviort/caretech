@@ -59,3 +59,12 @@ Filter to photos, horizontal, and the "shallow depth of field" or "selective foc
 ## Delivery
 
 Drop files into `public/img/photos/` named after the slot (`hero.jpg`, `ge.jpg`, ...). JPG, quality around 85, sRGB. The code change to switch from Unsplash to these files is one map in `src/content/site.ts`.
+
+## Footer video
+
+The closing CTA in the footer ("A evolução digital começa com decisões inteligentes.") runs a muted background loop on every page.
+
+- Source: Pexels video 7140928, "Close-up of a CPU" (https://www.pexels.com/video/close-up-of-a-cpu-7140928/), free for commercial use under the Pexels License, no attribution required.
+- Edit: the 1080p file, cut to an 8.4s loop by crossfading the last second into the first. Graded with ffmpeg to the series (warm cast at the top edge removed, slight lift so it reads under the overlay).
+- Files: `public/video/footer-loop.mp4` (H.264, about 500 KB), `footer-loop.webm` (VP9, about 200 KB) and the poster `footer-loop.jpg`. Each embeds its origin in the comment tag.
+- Behavior (`src/components/layout/FooterVideo.tsx`): nothing downloads until the footer is near the viewport, it pauses off screen, and with reduced motion it stays on the poster.

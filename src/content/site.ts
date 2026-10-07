@@ -60,6 +60,14 @@ export const images = {
 	about: photo('about', 'Fachada de um edifício hospitalar com janelas em sequência')
 }
 
+// Footer CTA background: Pexels video 7140928, graded to the series and cut to a seamless 8.4s loop.
+// Decorative, so it carries no alt text.
+export const footerVideo = {
+	mp4: '/video/footer-loop.mp4',
+	webm: '/video/footer-loop.webm',
+	poster: '/video/footer-loop.jpg'
+}
+
 export type Faq = { q: string; a: string }
 
 export type Service = {

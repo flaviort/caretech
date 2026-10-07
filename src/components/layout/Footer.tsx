@@ -3,14 +3,16 @@ import { Logo } from '@/components/brand/Logo'
 import { Button } from '@/components/ui/Button'
 import { LiveClock } from '@/components/ui/LiveClock'
 import { ShiftStrip } from '@/components/ui/ShiftStrip'
+import { FooterVideo } from '@/components/layout/FooterVideo'
 import { ConsentLink } from '@/components/consent/ConsentLink'
 import { contact, nav, routes, services, site } from '@/content/site'
 
 export function Footer() {
 	return (
 		<footer data-header='dark' className='relative bg-ink text-white'>
-			<div className='shell pb-10 pt-28 md:pt-40'>
-				<div className='grid gap-12 lg:grid-cols-12'>
+			<div className='relative'>
+				<FooterVideo />
+				<div className='shell relative grid gap-12 pb-24 pt-28 md:pb-32 md:pt-40 lg:grid-cols-12'>
 					<h2 className='display-l lg:col-span-8' data-reveal>
 						A evolução digital começa com decisões inteligentes.
 					</h2>
@@ -23,9 +25,11 @@ export function Footer() {
 						</Button>
 					</div>
 				</div>
+			</div>
 
+			<div className='shell pb-10'>
 				{/* operations board */}
-				<div className='mt-24 grid gap-px overflow-hidden rounded-card bg-white/12 md:mt-32 md:grid-cols-12' data-reveal>
+				<div className='grid gap-px overflow-hidden rounded-card bg-white/12 md:grid-cols-12' data-reveal>
 					<div className='bg-ink-2 p-5 md:col-span-3 md:p-6'>
 						<p className='label text-muted-dark'>Horário de Brasília</p>
 						<LiveClock seconds className='tnum mt-6 block text-[2.5rem] font-semibold leading-none tracking-[-0.04em] md:text-[3.25rem]' />
