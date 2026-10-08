@@ -12,6 +12,8 @@ export type CurtainHandle = {
 type Grid = { cols: number; rows: number; size: number }
 
 // The logo's rounded-square module, tiled into a board that closes over the page and opens on the next one.
+// Between transitions the board is display:none: no idle compositor layers, and iOS Safari 26 stops
+// sampling its blue panel to tint the status bar and toolbar.
 export const Curtain = forwardRef<CurtainHandle>(function Curtain(_, ref) {
 	const root = useRef<HTMLDivElement>(null)
 	const labelRef = useRef<HTMLSpanElement>(null)
@@ -45,7 +47,7 @@ export const Curtain = forwardRef<CurtainHandle>(function Curtain(_, ref) {
 		solid.dataset.done = '1'
 		if (prefersReducedMotion()) {
 			gsap.set([solid, markRef.current], { autoAlpha: 0 })
-			gsap.set(root.current, { pointerEvents: 'none' })
+			gsap.set(root.current, { pointerEvents: 'none', display: 'none' })
 			window.dispatchEvent(new CustomEvent('page:enter'))
 			return
 		}
@@ -64,7 +66,7 @@ export const Curtain = forwardRef<CurtainHandle>(function Curtain(_, ref) {
 			'-=0.15'
 		)
 		tl.call(() => window.dispatchEvent(new CustomEvent('page:enter')), [], '-=0.6')
-		tl.set(root.current, { pointerEvents: 'none' })
+		tl.set(root.current, { pointerEvents: 'none', display: 'none' })
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [grid])
 
@@ -75,7 +77,7 @@ export const Curtain = forwardRef<CurtainHandle>(function Curtain(_, ref) {
 			if (!el || el.style.pointerEvents === 'none') return
 			gsap.set(tiles(), { scale: 0 })
 			gsap.set([el.querySelector('[data-solid]'), markRef.current], { autoAlpha: 0 })
-			gsap.set(el, { pointerEvents: 'none' })
+			gsap.set(el, { pointerEvents: 'none', display: 'none' })
 			window.dispatchEvent(new CustomEvent('page:enter'))
 		}, 4500)
 		return () => window.clearTimeout(id)
@@ -90,7 +92,7 @@ export const Curtain = forwardRef<CurtainHandle>(function Curtain(_, ref) {
 					setLabel(text)
 					const col = origin ? Math.min(grid.cols - 1, Math.floor(origin.x / grid.size)) : 0
 					const row = origin ? Math.min(grid.rows - 1, Math.floor(origin.y / grid.size)) : 0
-					gsap.set(root.current, { pointerEvents: 'auto' })
+					gsap.set(root.current, { pointerEvents: 'auto', display: 'block' })
 					gsap.set(labelRef.current, { autoAlpha: 0, y: 12 })
 					const tl = gsap.timeline({ onComplete: () => resolve() })
 					tl.to(tiles(), {
@@ -107,7 +109,7 @@ export const Curtain = forwardRef<CurtainHandle>(function Curtain(_, ref) {
 					if (!grid) return resolve()
 					const tl = gsap.timeline({
 						onComplete: () => {
-							gsap.set(root.current, { pointerEvents: 'none' })
+							gsap.set(root.current, { pointerEvents: 'none', display: 'none' })
 							resolve()
 						}
 					})
