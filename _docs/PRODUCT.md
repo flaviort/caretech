@@ -54,7 +54,7 @@ Next.js (App Router) + Tailwind CSS, Lenis smooth scroll, View Transitions API +
 ## Evidence on Hand
 
 - Full content doc (source: CARETECH-Site.docx): Quem somos, história, missão, visão, valores, six services with bullet lists, two anonymized cases, diferencial, impact phrases, LGPD and compliance statements.
-- Cases are anonymized: no client names, logos, numbers, or testimonials. Do not invent any. No metrics are provided beyond "15+ years" and "founded 2022".
+- Cases are anonymized: no client names, logos, numbers, or testimonials. Do not invent any. No metrics are provided beyond "15+ years". The founding year (2022) is deliberately kept off the site, including structured data: the company is currently the founder alone, so lead with the 15+ years of experience.
 - No photography supplied. Founder name (Tiago Selusniaki) appears in existing schema metadata only.
 
 ## Product Principles

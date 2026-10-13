@@ -6,5 +6,5 @@ export const size = ogSize
 export const contentType = ogContentType
 
 export default function Image() {
-	return renderOg({ label: 'Sobre', title: 'TI com visão de negócio, desde 2022', photo: images.about.src })
+	return renderOg({ label: 'Sobre', title: 'TI com visão de negócio', photo: images.about.src })
 }

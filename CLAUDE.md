@@ -1,6 +1,6 @@
 # CareTech IT site
 
-Institutional site for CareTech IT (caretechit.com.br), a Brazilian IT, data intelligence and digital transformation consultancy founded in 2022 and focused on healthcare. The site is in Brazilian Portuguese only. Its job is to make a healthcare IT decision maker (CIO, IT manager, hospital director) trust CareTech with critical IT and start a conversation through WhatsApp, e-mail or the contact form.
+Institutional site for CareTech IT (caretechit.com.br), a Brazilian IT, data intelligence and digital transformation consultancy focused on healthcare, built on its founder's 15+ years in critical IT. The site is in Brazilian Portuguese only. Its job is to make a healthcare IT decision maker (CIO, IT manager, hospital director) trust CareTech with critical IT and start a conversation through WhatsApp, e-mail or the contact form.
 
 Slogan, binding: "Tecnologia que Cuida. Inteligência que Transforma."
 
@@ -75,7 +75,7 @@ The preview config in `.claude/launch.json` runs the dev server on port 3100 (`c
 
 ## Content rules
 
-- Say only what is true. Cases are anonymized: no client names, logos, metrics or testimonials, and none may be invented. The only numbers on hand are "founded 2022" and "15+ years".
+- Say only what is true. Cases are anonymized: no client names, logos, metrics or testimonials, and none may be invented. The only number on hand is "15+ years" (the founder's experience). The company was founded in 2022, but the site does not show it: for now the company is the founder, so the founding year undersells the experience. Don't put the year back in copy, metadata or JSON-LD (`foundingDate`).
 - Don't imply a 24h on-call service. The clock shows the Brasília hour, not a shift.
 - Contact: WhatsApp +55 (41) 9822-2437, contato@caretechit.com.br.
 

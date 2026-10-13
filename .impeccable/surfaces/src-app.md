@@ -29,7 +29,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 ## Recorded adaptations
 - Diagnóstico dial runs the five recurring challenges from the client doc ("Nossa História"), not the six services: the section answers "what problem do you have", and each challenge maps to the service (or the business-vision differentiator) that answers it. The dial centre changes per challenge.
-- Hero readout says "Desde 2022 / + 15 anos em ambientes críticos / Brasília hh:mm" instead of "Plantão diurno": a shift label would imply a 24h on-call service the client never claimed.
+- Hero readout says "+ 15 anos em ambientes críticos / Brasília hh:mm" (the "Desde 2022" line was dropped in Oct 2026 to lead with the founder's experience) instead of "Plantão diurno": a shift label would imply a 24h on-call service the client never claimed.
 - Label stacked above headings removed site-wide; the S.0x tag only appears floated inline at the start of a statement or heading.
 
 ## Unresolved

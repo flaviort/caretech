@@ -61,7 +61,6 @@ export const organization = {
 	image: `${site.url}/opengraph-image`,
 	slogan: site.slogan.join(' '),
 	description: site.description,
-	foundingDate: String(site.founded),
 	founder: { '@type': 'Person', name: 'Tiago Selusniaki' },
 	email: contact.email,
 	telephone: '+55-41-9822-2437',

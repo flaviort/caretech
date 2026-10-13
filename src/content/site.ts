@@ -7,7 +7,6 @@ export const site = {
 	slogan: ['Tecnologia que cuida.', 'Inteligência que transforma.'],
 	description:
 		'A CareTech é especializada em Tecnologia da Informação, Inteligência de Dados e Transformação Digital, com experiência em ambientes críticos de saúde. Atendimento nacional.',
-	founded: 2022,
 	founderYears: 15
 }
 
@@ -336,7 +335,7 @@ export const faq: Faq[] = [
 	},
 	{
 		q: 'Qual é a experiência da CareTech?',
-		a: 'A empresa foi fundada em 2022 a partir de mais de 15 anos de experiência do seu fundador em ambientes corporativos complexos, especialmente na saúde. Entre os projetos está a gestão integral da TI de uma instituição hospitalar de grande porte.'
+		a: 'A CareTech nasceu de mais de 15 anos de experiência do seu fundador em ambientes corporativos complexos, especialmente na saúde. Entre os projetos está a gestão integral da TI de uma instituição hospitalar de grande porte.'
 	},
 	{
 		q: 'Como a CareTech trata dados pessoais e informações confidenciais?',

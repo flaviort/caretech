@@ -11,7 +11,7 @@ import { breadcrumb, graph, pageMetadata, webPage } from '@/lib/seo'
 
 const title = 'Sobre a CareTech: TI com Visão de Negócio'
 const description =
-	'Fundada em 2022, a CareTech nasceu de mais de 15 anos de gestão de TI em ambientes críticos, especialmente na saúde. Conheça nossa história, missão, visão e valores.'
+	'A CareTech nasceu de mais de 15 anos de gestão de TI em ambientes críticos, especialmente na saúde. Conheça nossa história, missão, visão e valores.'
 
 export const metadata: Metadata = pageMetadata({ title, description, path: routes.about })
 
@@ -32,7 +32,7 @@ export default function SobrePage() {
 					<ScrubText as='h2'
 						className='max-w-[30ch] lg:max-w-[34ch]'
 						before={<SectionTag index='S.01' label='Origem' className='statement-tag' />}
-						text={`Fundada em ${site.founded}, a CareTech nasceu da experiência de mais de ${site.founderYears} anos do seu fundador em ambientes corporativos complexos, especialmente na saúde, onde disponibilidade, segurança da informação e qualidade dos processos são críticas.`}
+						text={`A CareTech nasceu da experiência de mais de ${site.founderYears} anos do seu fundador em ambientes corporativos complexos, especialmente na saúde, onde disponibilidade, segurança da informação e qualidade dos processos são críticas.`}
 					/>
 
 					<div className='mt-20 grid gap-12 md:mt-32 lg:grid-cols-12'>

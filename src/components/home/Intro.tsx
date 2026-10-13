@@ -1,12 +1,11 @@
 import Image from 'next/image'
-import { CalendarCheck, History, Hospital, LayoutGrid, MapPin, ShieldCheck } from 'lucide-react'
+import { History, Hospital, LayoutGrid, MapPin, ShieldCheck } from 'lucide-react'
 import { ScrubText } from '@/components/ui/ScrubText'
 import { SectionTag } from '@/components/ui/SectionTag'
 import { Button } from '@/components/ui/Button'
 import { images, routes, site } from '@/content/site'
 
 const facts = [
-	{ icon: CalendarCheck, value: String(site.founded), label: 'Ano de fundação' },
 	{ icon: History, value: `${site.founderYears}+`, label: 'Anos de experiência' },
 	{ icon: LayoutGrid, value: '6', label: 'Frentes de serviço' }
 ]
@@ -43,7 +42,7 @@ export function Intro() {
 
 					<div className='flex flex-col justify-between gap-12 lg:col-span-6 lg:pl-4'>
 						<div>
-						<dl className='grid grid-cols-3 gap-x-4'>
+						<dl className='grid grid-cols-2 gap-x-4'>
 							{facts.map(({ icon: Icon, value, label }) => (
 								// dt must precede dd inside a dl group; order-last puts the label back under the value
 								<div key={label} className='flex min-w-0 flex-col border-t border-line py-5 md:py-6' data-reveal>
